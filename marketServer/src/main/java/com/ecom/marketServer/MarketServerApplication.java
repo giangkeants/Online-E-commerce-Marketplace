@@ -10,5 +10,4 @@ public class MarketServerApplication {
         SpringApplication.run(MarketServerApplication.class, args);
     }
 
-    k;safsafsaas;
 }
