@@ -4,16 +4,16 @@
  * Module dependencies.
  */
 
-// require('dotenv').config()
+require('dotenv').config()
 const app = require('../src/app');
-const debug = require('debug')('onlineshop:server');
+const debug = require('debug')('eflyer:server');
 const http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || 8080);
+const port = normalizePort(process.env.PORT || 3000);
 app.set('port', port);
 
 /**

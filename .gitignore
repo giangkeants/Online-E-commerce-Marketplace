@@ -63,6 +63,9 @@ node_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-src/config/.env
+.env
+
+# Data generator
+src/data_generator/FakeGenerator
 
 .idea
