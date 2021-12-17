@@ -10,7 +10,7 @@ const session = require('express-session');
 const passport = require("./config/passport");
 const methodOverride = require('method-override');
 
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/gd');
 const usersRouter = require('./routes/users');
 const confirmationRouter = require('./routes/confirmation');
 const productRouter = require('./components/product/productRouter');
