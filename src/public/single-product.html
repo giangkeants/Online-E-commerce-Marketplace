@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book market - single product</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+    <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://mazano.b-cdn.net/wp-content/cache/minify/597de.css" media="all">
+    <link rel="stylesheet" href="https://mazano.b-cdn.net/wp-content/cache/minify/4ac1b.css" media="all">
+    <link rel="stylesheet" href="https://mazano.b-cdn.net/wp-content/cache/minify/80be4.css" media="all">
+    <link rel="stylesheet" id="mazano-google-fonts-css" href="//fonts.googleapis.com/css?family=Open%20Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic%7CShadows%20Into%20Light%7CYellowtail&amp;display=swap" type="text/css" media="all">
+
+    <link rel="stylesheet" href="css/84bf7.css" media="all">
+
+</head>
+
+<body data-rsssl="1" class="archive post-type-archive post-type-archive-product theme-mazano woocommerce-shop woocommerce woocommerce-page woocommerce-js kt_used_header_6 Mazano-1.3.3 wpb-js-composer js-comp-ver-6.7.0 vc_responsive currency-usd">
+    <div id="yith-wcwl-popup-message" style="display: none;">
+        <div id="yith-wcwl-message"></div>
+    </div>
+    <!-- Cái thanh hiển thị góc trên cùng khi cuộn xuống. -->
+    <!-- (Thanh có tác dụng cho toàn bộ thẻ div này) -->
+    <div id="header-ontop" class="is-sticky on-sticky">
+        <div class="header style6 ontop">
+            <div class="main-header">
+                <div class="container-wapper">
+                    <div class="main-menu-wapper">
+                        <div class="header-inner">
+                            <div class="row margin-0 header-top">
+                                <div class="padding-0 col-lg-5 col-md-6 hidden-sm hidden-xs">
+                                    <div class="header-main-menu clear-both">
+                                        <a href=home.html><img alt=Mazano src=images/logo.png class=_rw></a>
+                                    </div>
+                                </div>
+                                <!--Quay trở lại Trang chủ. -->
+                                <div class="padding-0 col-lg-2 col-md-4 col-sm-3 hidden-md hidden-sm hidden-xs">
+                                    <div class="logo clear-both">
+                                    </div>
+                                </div>
+                                <!--Quay trở lại Trang chủ. (end)-->
+                                <div class="padding-0 col-lg-5 col-md-3 col-sm-7 col-xs-9">
+                                    <div class="header-control clear-both">
+                                        <!--Cái giỏ hàng-->
+                                        <div class="mini-cart mazano-mini-cart">
+                                            <!--Chuyển đến trang Giỏ hàng-->
+                                            <a class="cart-link" href="cart.html">
+                                                <span class="icon">
+        <!-- Đếm số lượng sản phẩm đã bỏ vào giỏ hàng. -->
+        <span class="count">0</span>
+                                                </span>
+                                                <span class="text">Bag</span>
+                                                <span class="sub-total"><span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><bdi>0.00<span class="woocommerce-Price-currencySymbol">$</span></bdi>
+                                                </span>
+                                                </span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <!--Cái giỏ hàng. (end)-->
+
+
+                                        <!-- Trang account. -->
+                                        <span class="icon-account flaticon-shape"></span>
+                                        <span class="icon-search flaticon-magnifying-glass"></span>
+                                        <div class="account-control">
+                                            <div class="inner">
+                                                <span class="close-account-control"></span>
+                                                <ul id="menu-acount-menu" class="account-menu">
+                                                    <li id="menu-item-315" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-315 menu-item-has-children"><a title="My Account" href="https://mazano.kutethemes.net/my-account/">My Account</a>
+                                                        <ul role="menu" class=" sub-menu">
+                                                            <li id="menu-item-316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-316"><a href="https://mazano.kutethemes.net/my-account/">Login</a></li>
+                                                            <li id="menu-item-317" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-317"><a title="Wishlist" href="https://mazano.kutethemes.net/wishlist/">Wishlist</a></li>
+                                                            <li id="menu-item-318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a title="Checkout" href="https://mazano.kutethemes.net/checkout/">Checkout</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li id="menu-item-319" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-319 menu-item-has-children menu-item-currency-switcher">
+                                                        <a href="#"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- Trang account. (end)-->
+
+
+                                        <!--Thanh search. -->
+                                        <div class="search-control">
+                                            <div class="inner">
+                                                <span class="close-search-control"></span>
+                                                <form method="get" action="home.html" class="box-search kt_wcajs">
+                                                    <h3 class="title">Search Now !</h3>
+                                                    <input type="hidden" name="post_type" value="product">
+                                                    <div class="box-search-inner">
+                                                        <input class="search-field kt_wcajs_input" value="" type="text" name="s" placeholder="Your search here..."></div>
+                                                    <div class="kt_wcajs_result"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!--Thanh search. (end)-->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Nút (Button) Logo Và các icon bên phải. -->
+                            <div class="row">
+                                <div class="col-ts-12 col-xs-6 col-sm-6 col-md-2">
+                                    <div class="logo clear-both logo-ontop">
+                                        <a href="home.html"><img alt="Mazano" src="images/logo.png" class="_rw"></a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-8 hidden-sm hidden-xs ">
+                                </div>
+                                <div class="col-ts-12 col-xs-6  col-sm-6 col-md-2">
+                                    <div class="header-control header-control-ontop clear-both">
+                                        <a href="#" class="mobile-navigation">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </a>
+                                        <div class="mini-cart">
+                                            <a class="cart-link" href="cart.html">
+                                                <span class="icon">
+<span class="count">0</span>
+                                                </span>
+                                                <span class="text">Bag</span>
+                                                <span class="sub-total"><span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><bdi>0.00<span class="woocommerce-Price-currencySymbol">$</span></bdi>
+                                                </span>
+                                                </span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <span class="icon-account flaticon-shape"></span>
+                                        <span class="icon-search flaticon-magnifying-glass"></span>
+                                        <div class="account-control full-height">
+                                            <div class="inner">
+                                                <span class="close-account-control"></span>
+                                                <ul id="menu-acount-menu-1" class="account-menu">
+                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-315 menu-item-has-children"><a title="My Account" href="https://mazano.kutethemes.net/my-account/">My Account</a>
+                                                        <ul role="menu" class=" sub-menu">
+                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-316"><a href="https://mazano.kutethemes.net/my-account/">Login</a></li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-317"><a title="Wishlist" href="https://mazano.kutethemes.net/wishlist/">Wishlist</a></li>
+                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a title="Checkout" href="https://mazano.kutethemes.net/checkout/">Checkout</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-319 menu-item-has-children menu-item-currency-switcher">
+                                                        <a href="#"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="search-control full-height">
+                                            <div class="inner">
+                                                <span class="close-search-control"></span>
+                                                <form method="get" action="home.html" class="box-search kt_wcajs">
+                                                    <h3 class="title">Search Now !</h3>
+                                                    <input type="hidden" name="post_type" value="product">
+                                                    <div class="box-search-inner">
+                                                        <input class="search-field kt_wcajs_input" value="" type="text" name="s" placeholder="Your search here..."></div>
+                                                    <div class="kt_wcajs_result"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Nút (Button) Logo. (end)-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cái thanh hiển thị góc trên cùng khi cuộn xuống. (end)-->
+
+
+
+    <!-- ================ start banner area ================= -->
+    <section class="blog-banner-area" id="blog">
+        <div class="container h-100">
+            <div class="blog-banner">
+                <div class="text-center">
+                    <h1>Shop Single</h1>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Shop Single</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ end banner area ================= -->
+
+
+    <!--================Single Product Area =================-->
+    <div class="product_image_area">
+        <div class="container">
+            <div class="row s_product_inner">
+                <div class="col-lg-6">
+                    <div class="owl-carousel owl-theme s_Product_carousel">
+                        <div class="single-prd-item">
+                            <img class="img-fluid" src="images/conan_98.jpg" alt="">
+                        </div>
+                        <!-- <div class="single-prd-item">
+							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+						</div>
+						<div class="single-prd-item">
+							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+						</div> -->
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="s_product_text">
+                        <h3>Conan Tập 98</h3>
+                        <h2>20.000 VNĐ</h2>
+                        <ul class="list">
+                            <li><a class="active" href="#"><span>Author</span> : Mistery.</a></li>
+                            <li><a href="#"><span>Publishing year</span> : 2014</a></li>
+                        </ul>
+                        <p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for something that can make your interior look awesome, and at the same time give you the pleasant warm feeling during the winter.</p>
+                        <div class="product_count">
+                            <label for="qty">Quantity:</label>
+                            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;" class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
+                            <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+                            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="ti-angle-right"></i></button>
+                            <a class="button primary-btn" href="#">Add to Cart</a>
+                        </div>
+                        <div class="card_area d-flex align-items-center">
+                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
+                            <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================End Single Product Area =================-->
+
+    <!--================Product Description Area =================-->
+    <section class="product_description_area">
+        <div class="container">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Comments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at
+                        the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant
+                        Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she
+                        decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady
+                        with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and</p>
+                    <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of
+                        spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of
+                        cooking that is more efficient for one person creating less</p>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h5>Width</h5>
+                                    </td>
+                                    <td>
+                                        <h5>128mm</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Height</h5>
+                                    </td>
+                                    <td>
+                                        <h5>508mm</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Depth</h5>
+                                    </td>
+                                    <td>
+                                        <h5>85mm</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Weight</h5>
+                                    </td>
+                                    <td>
+                                        <h5>52gm</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Quality checking</h5>
+                                    </td>
+                                    <td>
+                                        <h5>yes</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Freshness Duration</h5>
+                                    </td>
+                                    <td>
+                                        <h5>03days</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>When packeting</h5>
+                                    </td>
+                                    <td>
+                                        <h5>Without touch of hand</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Each Box contains</h5>
+                                    </td>
+                                    <td>
+                                        <h5>60pcs</h5>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="comment_list">
+                                <div class="review_item">
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="img/product/review-1.png" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Blake Ruiz</h4>
+                                            <h5>12th Feb, 2018 at 05:56 pm</h5>
+                                            <a class="reply_btn" href="#">Reply</a>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    </p>
+                                </div>
+                                <div class="review_item reply">
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="img/product/review-2.png" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Blake Ruiz</h4>
+                                            <h5>12th Feb, 2018 at 05:56 pm</h5>
+                                            <a class="reply_btn" href="#">Reply</a>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    </p>
+                                </div>
+                                <div class="review_item">
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="img/product/review-3.png" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Blake Ruiz</h4>
+                                            <h5>12th Feb, 2018 at 05:56 pm</h5>
+                                            <a class="reply_btn" href="#">Reply</a>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="review_box">
+                                <h4>Post a comment</h4>
+                                <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-right">
+                                        <button type="submit" value="submit" class="btn primary-btn">Submit Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row total_rate">
+                                <div class="col-6">
+                                    <div class="box_total">
+                                        <h5>Overall</h5>
+                                        <h4>4.0</h4>
+                                        <h6>(03 Reviews)</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="rating_list">
+                                        <h3>Based on 3 Reviews</h3>
+                                        <ul class="list">
+                                            <li><a href="#">5 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
+                                            <li><a href="#">4 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
+                                            <li><a href="#">3 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
+                                            <li><a href="#">2 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
+                                            <li><a href="#">1 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review_list">
+                                <div class="review_item">
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="img/product/review-1.png" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Blake Ruiz</h4>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    </p>
+                                </div>
+                                <div class="review_item">
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="img/product/review-2.png" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Blake Ruiz</h4>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    </p>
+                                </div>
+                                <div class="review_item">
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="img/product/review-3.png" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>Blake Ruiz</h4>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="review_box">
+                                <h4>Add a Review</h4>
+                                <p>Your Rating:</p>
+                                <ul class="list">
+                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                </ul>
+                                <p>Outstanding</p>
+                                <form action="#/" class="form-contact form-review mt-3">
+                                    <div class="form-group">
+                                        <input class="form-control" name="name" type="text" placeholder="Enter your name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="email" type="email" placeholder="Enter email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject" type="text" placeholder="Enter Subject">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control different-control w-100" name="textarea" id="textarea" cols="30" rows="5" placeholder="Enter Message"></textarea>
+                                    </div>
+                                    <div class="form-group text-center text-md-right mt-3">
+                                        <button type="submit" class="button button--active button-review">Submit Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Product Description Area =================-->
+
+    <!--================ Start related Product area =================-->
+    <section class="related-product-area section-margin--small mt-0">
+        <div class="container">
+            <div class="section-intro pb-60px">
+                <p>Popular Item in the market</p>
+                <h2>Top <span class="section-intro__style">Product</span></h2>
+            </div>
+            <div class="row mt-30">
+                <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+                    <div class="single-search-product-wrapper">
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+                    <div class="single-search-product-wrapper">
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-4.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-5.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-6.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+                    <div class="single-search-product-wrapper">
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-7.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-8.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-9.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+                    <div class="single-search-product-wrapper">
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                        <div class="single-search-product d-flex">
+                            <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Gray Coffee Cup</a>
+                                <div class="price">$170.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ end related Product area =================-->
+
+    <footer class="footer style1">
+        <div class="container">
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1470186420787">
+                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-3 vc_col-md-5">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1470213740637">
+                                <figure class="wpb_wrapper vc_figure">
+                                    <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="138" height="27" src="images/logo.png" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                                </figure>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element ">
+                                <div class="wpb_wrapper">
+                                    <a href=about_us.html>
+                                        <p>ABOUT US</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-6 vc_col-md-7">
+                </div>
+                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-3 vc_col-md-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_wrapper">
+                            <div class="widget vc_custom_1470188955260  kt_social  default">
+                                <a class="facebook" target="_blank" href="https://www.facebook.com/" title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a><a class="twitter" target="_blank" href="http://www.twitter.com/https://twitter.com/"
+                                    title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a><a class="pinterest" target="_blank" href="http://www.pinterest.com/https://www.pinterest.com//" title="Pinterest"><i class="fa fa-pinterest-p"></i><span>Pinterest</span></a>
+                                <a class="dribbble" target="_blank" href="http://www.dribbble.com/https://dribbble.com/" title="Dribbble"><i class="fa fa-dribbble"></i><span>Dribbble</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Thanh cuộn Trở về đầu trang. -->
+    <a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;"><i class="fa fa-angle-up"></i></a>
+    <!-- Thanh cuộn Trở về đầu trang. -->
+
+    <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="vendors/skrollr.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="vendors/jquery.ajaxchimp.min.js"></script>
+    <script src="vendors/mail-script.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
