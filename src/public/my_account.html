@@ -9,34 +9,51 @@
     <link rel="stylesheet" href="css/detail.css">
     <title>Document</title>
 </head>
-<body>
+<body>                                                                  <!--chạy = live server chưa áp vào code-->
+    <section class="blog-banner-area" id="blog">                        <!--kéo ra giữa hay để chổ hiện tại đẹp hơn-->
+        <div class="container h-100">
+            <div class="blog-banner">
+                <div class="text-center">
+                    <h1>Profie</h1>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">My Profile</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
         <div class="menu">
             <ul>
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">Orders</a></li>
                 <li><a href="#">Upload</a></li>
-                <li><a href="#">Addresses</a></li>
+                <li><a href="#">Addresses</a></li>                  <!--chinh lai cai khung bọc mấy cái này-->
                 <li><a href="#">Account Details</a></li>
                 <li><a href="#">Logout</a></li>
             </ul>
         </div>
-        <div class="content">
-            <label>First name *</label> <br>
+
+        <div class="content">                                                  <!--them field sdt, DoB, Sex-->
+            <label>First name *</label> <br>                                    <!--CÓ THỂ thì thêm khung avatar vào như bên nam, chắc để bên phải-->
             <input type="text"> <br>
             <label>Last name *</label> <br>
             <input type="text"> <br>
-            <label>Display name *</label> <br>
+            <label>Display name *</label> <br>                                  <!--cho cái dòng dưới này xuống hàng-->
             <input type="text"><span>This will be how your name will be displayed in the account section and in reviews</span> <br>
             <label>Email address *</label> <br>
             <input type="text"> <br>
             <p>Password change</p>
             <label>Current password (leave blank to leave unchanged)</label> <br>
-            <input type="text"> <br>
+            <input type="password"> <br>
             <label>New password (leave blank to leave unchanged)</label> <br>
-            <input type="text"> <br>
+            <input type="password"> <br>
             <label>Confirm new password</label> <br>
-            <input type="text"> <br>
+            <input type="password"> <br>
            <button>SAVE CHANGE</button>
         </div>
      
