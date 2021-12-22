@@ -1,0 +1,148 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/src/public/css/detail.css">
+    <title>Document</title>
+</head>
+<body>-->
+<section class="blog-banner-area" id="blog">
+    <div class="container h-100">
+        <div class="blog-banner">
+            <div class="text-center">
+                <h1>Profile</h1>
+                <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">My Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog_area single-post-area py-80px section-margin--small">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 posts-list">
+				<div class="single-post row">
+					<div class="col-lg-3  col-md-3">
+						<div class="blog_info text-right">
+                            <ul>
+                                <li>
+                                    <a href="/">Trang chủ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">Quản lý đơn hàng
+                                    </a>
+                                </li>
+                                <li><a href="#">Upload</a></li>
+                                <li><a href="#">Thay đổi mật khẩu</a></li>
+                                <!--chinh lai cai khung bọc mấy cái này-->
+                                <li><a href="#">Chi tiết tài khoản</a></li>
+                                <li><a href="#">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 blog_details">
+                        <h2>Thông tin tài khoản</h2>
+                        <div class="comment-form">
+                            <form action="/account/{{user._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                                <div class="form-group form-inline">
+                                    <div class="form-group col-lg-6 col-md-6 name">
+                                        <label style="display: flex">Họ tên</label>
+                                        <input value="{{user.name}}" type="text" class="form-control" name="name" id="name"
+                                            placeholder="Họ và Tên" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Nhập Họ và Tên'">
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 email">
+                                        <label style="display: flex">Số điện thoại</label>
+                                        <input value="{{user.phone}}" type="text" class="form-control" name="phone" id="phone"
+                                            placeholder="Số điện thoại" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Nhập sđt'">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: flex">Email</label>
+                                    <input value="{{user.email}}" type="email" class="form-control" name="email" id="email"
+                                        placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nhập Email'">
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: flex">Địa chỉ</label>
+                                    <input value="{{user.address}}" type="text" class="form-control" name="address" id="address"
+                                        placeholder="Địa chỉ" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Nhập Địa chỉ'">
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: flex">Ngày sinh</label>
+                                    <input value="{{user.dob}}" type="date" class="form-control" name="dob" id="dob"
+                                        placeholder="Ngày sinh" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Nhập ngày sinh'">
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: flex">Giới tính</label>
+                                    {{!-- <input value="{{user.sex}}" type="text" class="form-control" name="sex" id="sex"
+                                        placeholder="Giới tính" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Nhập giới tính'"> --}}
+                                    <select class="form-select" name="sex" aria-label="Default select example">
+                                        {{#if (is_equals user.sex "Nam")}}
+                                        <option selected value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                        {{else if (is_equals user.sex "Nữ")}}
+                                        <option value="Nam">Nam</option>
+                                        <option selected value="Nữ">Nữ</option>
+                                        {{else}}
+                                        <option selected value="">Chọn giới tính</option>
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                        {{/if}}
+                                    </select>
+                                </div>
+                                <input id="image_url" name="avatar" style="display: none;" type="file" accept=".jpg,.jpeg,.png">
+                                <input type="submit" value="Cập nhật" class="button button-postComment button--active"
+                                    id="submit-button">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="col-lg-4">
+				<div class="blog_right_sidebar">
+					<aside class="single_sidebar_widget author_widget">
+						{{#if user.avatar_url}}
+						<img class="avatar_right" id="avatar" src="{{user.avatar_url}}" alt="">
+						{{else}}
+						<img class="avatar_right" id="avatar" src="/img/male_avatar.svg" alt="">
+						{{/if}}
+						<h4>{{user.username}}</h4>
+						<input class="btn-light" type="button" id="loadFileXml" value="Chọn ảnh"
+							onclick="document.getElementById('image_url').click();" />
+						<div class="social_icon">
+							<a href="#">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a href="#">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a href="#">
+								<i class="fab fa-github"></i>
+							</a>
+							<a href="#">
+								<i class="fab fa-behance"></i>
+							</a>
+						</div>
+						<div class="br"></div>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="../js/handleChooseImgOnchange.js"></script>
