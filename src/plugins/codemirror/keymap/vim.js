@@ -498,7 +498,7 @@
         if (scope !== 'local') {
           return option.callback();
         }
-        return;
+
       } else {
         var local = (scope !== 'global') && (cm && cm.state.vim.options[name]);
         return (local || (scope !== 'local') && option || {}).value;
@@ -3229,7 +3229,7 @@
             bottom = Math.max(anchor.line, head.line),
             toCh = head.ch;
         if (fromCh < toCh) { toCh += 1 }
-        else { fromCh += 1 };
+        else { fromCh += 1 }
         var height = bottom - top + 1;
         var primary = head.line == top ? 0 : height - 1;
         var ranges = [];
@@ -3590,7 +3590,7 @@
               if (wordStart == cur.ch && lineNum == cur.line &&
                   wordEnd == wordStart + dir) {
                 // We started at the end of a word. Find the next one.
-                continue;
+
               } else {
                 return {
                   from: Math.min(wordStart, wordEnd + 1),

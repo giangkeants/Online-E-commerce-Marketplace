@@ -2234,7 +2234,7 @@ var uPlot = (function () {
 							addGap(gaps, prevXPos, xPos);
 							inGap = true;
 						}
-						continue;
+
 					}
 					else {
 						if (inGap) {
