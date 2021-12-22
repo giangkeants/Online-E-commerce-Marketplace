@@ -1318,40 +1318,54 @@ left:775px;
 }
 
 #member .Giang a{
-	display: block; width: 100%; height: 100%;
+    display: block; width: 100%; height: 100%;
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url("../images/chó-removebg-preview.png");
     background-size: 0, cover;
-	transform-style: preserve-3d;
-	transition: all 0.5s;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/chó-removebg-preview.png") center;
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    background-position: center;
 }
 #member .Nam a{
-	display: block; width: 100%; height: 100%;
+    display: block; width: 100%; height: 100%;
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url("../images/mèo2-removebg-preview.png");
     background-size: 0, cover;
-	transform-style: preserve-3d;
-	transition: all 0.5s;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/mèo2-removebg-preview.png") center;
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    background-position: center;
 }
 #member .Hao a{
-	display: block; width: 100%; height: 100%;
-
+    display: block; width: 100%; height: 100%;
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url("../images/sóc2-removebg-preview.png");
     background-size: 0, cover;
-	transform-style: preserve-3d;
-	transition: all 0.5s;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) center, url("../images/sóc2-removebg-preview.png");
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    background-position: center;
 }
 #member .Phat a{
-	display: block; width: 100%; height: 100%;
+    display: block; width: 100%; height: 100%;
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url("../images/thỏ2-removebg-preview.png");
     background-size: 0, cover;
-	transform-style: preserve-3d;
-	transition: all 0.5s;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/thỏ2-removebg-preview.png") center;
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    background-position: center;
 }
 #member .Van a{
-	display: block; width: 100%; height: 100%;
+    display: block; width: 100%; height: 100%;
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url("../images/unnamed-removebg-preview.png");
     background-size: 0, cover;
-	transform-style: preserve-3d;
-	transition: all 0.5s;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/unnamed-removebg-preview.png") center;
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    background-position: center;
 }
 #member .thumb:hover a {transform: rotateX(80deg); transform-origin: bottom;}
 #member .thumb a:after {
