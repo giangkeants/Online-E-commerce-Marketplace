@@ -843,11 +843,11 @@ a{
   color: #222;
   font-family: Roboto, Arial, sans-serif;
   height: 80vmin;
-  left: 40%;
   position: absolute;
-  top: 80%;
+left:775px;
+    top: 850px;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 120%;
   transition: 2s;
 }
 
