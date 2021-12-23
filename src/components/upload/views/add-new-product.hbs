@@ -10,48 +10,82 @@
     <title>Document</title>
 </head>
 <body>-->
-<div class="container">
-    <div class="menu">
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Orders</a></li>
-            <li><a href="#">Upload</a></li>
-            <li><a href="#">Addresses</a></li>
-            <li><a href="#">Account Details</a></li>
-            <li><a href="#">Logout</a></li>
-        </ul>
+<section class="blog-banner-area" id="blog">
+    <div class="container h-100">
+        <div class="blog-banner">
+            <div class="text-center">
+                <h1>Add a new Product</h1>
+                <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Upload</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
     </div>
+</section>
+<section class="blog_area single-post-area py-80px section-margin--small">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 posts-list">
+				<div class="single-post row">
+					<div class="col-lg-3  col-md-3">
+						<div class="blog_info text-right">
+
+                            <ul style="list-style-type: none; font-size: 17px">
+                                <li>
+                                    <a href="/">Homepage
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/account/cart/{{user.id}}">My Cart
+                                    </a>
+                                </li>
+                                <li><a href="/upload/add-new-product">Add a new product</a></li>
+                                <li><a href="#">Change Password</a></li>
+                                <!--chinh lai cai khung bọc mấy cái này-->
+                                <li><a href="/account/{{user.id}}">Account Details</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 blog_details">
+                                            <h2>New Product</h2>
+                                            <div class="comment-form">
     <form action="/products" method="POST">
         <div class="content1">
             <div class="form-group">
-                <label for="inputName">Book's name</label>
-                <input type="text" id="inputName" name="name" class="form-control">
+                <label for="inputName">Book Title</label>
+                <input type="text" id="inputName" name="name" class="form-control" style="margin-bottom:-5px">
             </div>
             <div class="form-group">
                 <label for="inputCategory">Category</label>
-                <input type="text" id="inputCategory" name="category" class="form-control">
+                <input type="text" id="inputCategory" name="category" class="form-control" style="margin-bottom:-5px">
             </div>
             <div class="form-group">
                 <label for="inputAuthor">Author</label>
-                <input type="text" id="inputAuthor" name="author" class="form-control">
+                <input type="text" id="inputAuthor" name="author" class="form-control" style="margin-bottom:-5px">
             </div>
             <div class="form-group">
                 <label for="inputPrice">Price</label>
-                <input type="text" id="inputPrice" name="price" class="form-control">
+                <input type="text" id="inputPrice" name="price" class="form-control" style="margin-bottom:-5px">
             </div>
             <div class="form-group">
                 <label for="inputDes">Description</label>
-                <input type="text" id="inputDes" name="description" class="form-control">
+{{!--                 <input type="text" id="inputDes" name="description" class="form-control" style="margin-bottom:-5px;"> --}}
+                <textarea rows="6" wrap="soft" id="inputDes" name="description" class="form-control" style="margin-bottom:-5px; width:450px"></textarea>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a href="/products" class="btn btn-secondary">Hủy</a>
-                    <input type="submit" value="Thêm sản phẩm" class="btn btn-success float-right">
+                    <a href="/products" class="btn btn-secondary">Cancel</a>
+                    <input type="submit" value="Upload" class="btn btn-success float-right">
                 </div>
             </div>
     </form>
 </div>
-
+</div>
+</div>
 </div>
 <!--</body>
 </html>-->
