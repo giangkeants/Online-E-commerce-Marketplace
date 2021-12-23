@@ -33,19 +33,20 @@
 				<div class="single-post row">
 					<div class="col-lg-3  col-md-3">
 						<div class="blog_info text-right">
-                            <ul>
+
+                            <ul style="list-style-type: none">
                                 <li>
                                     <a href="/">Trang chủ
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">Quản lý đơn hàng
+                                    <a href="/account/cart/{{user.id}}">Quản lý đơn hàng
                                     </a>
                                 </li>
-                                <li><a href="#">Upload</a></li>
+                                <li><a href="/upload/add-new-product">Upload</a></li>
                                 <li><a href="#">Thay đổi mật khẩu</a></li>
                                 <!--chinh lai cai khung bọc mấy cái này-->
-                                <li><a href="#">Chi tiết tài khoản</a></li>
+                                <li><a href="/account/{{user.id}}">Chi tiết tài khoản</a></li>
                                 <li><a href="/logout">Đăng xuất</a></li>
                             </ul>
                         </div>

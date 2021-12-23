@@ -571,6 +571,7 @@
                                           <a href="home.html"><img alt="Mazano" src="images/logo.png" class="_rw"></a>
                                       </div>
                                   </div>
+
                                   <div class="padding-0 col-lg-5 col-md-6 hidden-sm hidden-xs">
                                       <div class="header-main-menu clear-both">
                                           <a href="/"><img src="https://cdn.discordapp.com/attachments/635399217963204615/923536813493194752/logo.png" class=_rw></a>
@@ -584,7 +585,12 @@
                                       <div class="header-control clear-both">
 
                                           <div class="mini-cart mazano-mini-cart">
-                                              <a class="cart-link" href="/products">
+
+                                              {{#if user}}
+                                              <a class="cart-link" href="/account/cart/{{user.id}}">
+                                              {{else}}
+                                              <a class="cart-link" href="/login">
+                                              {{/if}}
                                                   <span class="icon">
               <span class="count">0</span>
                                                   </span>
@@ -616,7 +622,7 @@
                                                           {{/if}}
                                                               <li id="menu-item-317" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-317"><a title="Wishlist" href="#">Wishlist</a></li>
                                                               <li id="menu-item-318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a title="Checkout" href="#">Checkout</a></li>
-                                                              <li id="menu-item-319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-319"><a title="Checkout" href="#">Logout</a></li>
+                                                              <li id="menu-item-319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-319"><a title="Logout" href="/logout">Logout</a></li>
                                                           </ul>
                                                       </li>
                                                       <li id="menu-item-319" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-319 menu-item-has-children menu-item-currency-switcher">
@@ -839,7 +845,7 @@ Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </
                                   <div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1470213740637">
                                       <figure class="wpb_wrapper vc_figure">
                                           <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                          <img width="138" height="27" src="https://cdn.discordapp.com/attachments/635399217963204615/923536813493194752/logo.png" class="vc_single_image-img attachment-full" alt="" loading="lazy"></div>
+                                          <a href="/"><img width="138" height="27" src="https://cdn.discordapp.com/attachments/635399217963204615/923536813493194752/logo.png" class="vc_single_image-img attachment-full" alt="" loading="lazy"></a></div>
                                       </figure>
                                   </div>
                                   <div class="wpb_text_column wpb_content_element ">

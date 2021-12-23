@@ -11,7 +11,19 @@ exports.get = async (req, res) => {
   try {
     // const account = await service.getById(req.params.id);
     // res.render('account/views/account_detail', {account});
-    res.render('account/views/profile');               //account_detail
+                   //account_detail
+    res.render('account/views/profile');
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.renderCartPage = async (req, res) => {
+  try {
+    // const account = await service.getById(req.params.id);
+    // res.render('account/views/account_detail', {account});
+    //account_detail
+    res.render('account/views/cart');
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

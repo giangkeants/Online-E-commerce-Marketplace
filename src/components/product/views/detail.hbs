@@ -21,19 +21,7 @@
 						<h2>{{product.price}}₫</h2>
 						<ul class="list">
 							<li><div><span>Loại sản phẩm</span> : {{product.category}}</div></li>
-							<li><div><span>Nhà sản xuất</span> : {{product.producer}}</div></li>
-							<li><div><span>Xuất xứ</span> : {{product.origin}}</div></li>
-							<li><div><span>Bảo hành</span> : 12 tháng</div></li>
-							<li><div><span>Tình trạng</span> : Mới 100%</div></li>
 						</ul>
-						<div class="list1">Khuyến mãi:
-						  <div>Giảm giá chỉ còn 21,490,000</div>
-						 </div>
-						<div class="list1">Ưu đãi đặc biệt khi mua kèm LAPTOP:
-						  {{#each product.offer}}
-						  <div>{{this.content}}</div>
-						  {{/each}}
-						</div>
 						<div class="product_count">
               <label for="qty">Số lượng:</label>
               <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
@@ -41,7 +29,7 @@
 							<input type="number" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
 							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
                class="reduced items-count" type="button"><i class="ti-angle-right"></i></button>
-							<a class="button primary-btn" href="#">Thêm vào giỏ hàng</a>
+							<a class="button primary-btn" href="/account/cart/{{user.id}}">Thêm vào giỏ hàng</a>
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>

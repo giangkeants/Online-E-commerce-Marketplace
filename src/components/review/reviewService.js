@@ -35,7 +35,7 @@ exports.insert = async (newreview) => {
  *
  * @param id
  * @param updateReview
- * @returns {Promise<{ReviewModel: model}>}
+ * @returns {Promise<{Review: model}>}
  */
 exports.update = async (id, updateReview) => {
   try {
@@ -50,7 +50,7 @@ exports.update = async (id, updateReview) => {
  * Xoa order detail dang co trong database bang id
  *
  * @param id
- * @returns {Promise<{OrderDetail: model}>}
+ * @returns {Promise<{Review: model}>}
  */
 exports.delete = async (id) => {
   try {

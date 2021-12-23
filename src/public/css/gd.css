@@ -405,7 +405,7 @@ ol,ul {
 }
 .slideshow li:nth-child(1) span {
     background-size: cover;
-    background: url(../images/sách4.jpg) center;
+    background: url(../images/book1.jpg) center;
 }
 .slideshow li:nth-child(2) span {
     -webkit-animation-delay: 6s;
@@ -414,11 +414,11 @@ ol,ul {
     -ms-animation-delay: 6s;
     animation-delay: 6s;
     background-size: cover;
-    background: url(../images/sách2.jpg) center;
+    background: url(../images/book2.jpg) center;
 }
 .slideshow li:nth-child(3) span {
     background-size: cover;
-    background: url(../images/sách3.jpg) center;
+    background: url(../images/book3.jpg) center;
     -webkit-animation-delay: 12s;
     -moz-animation-delay: 12s;
     -o-animation-delay: 12s;
@@ -427,7 +427,7 @@ ol,ul {
 }
 .slideshow li:nth-child(4) span {
     background-size: cover;
-    background: url(../images/sách1.jpg) center;
+    background: url(../images/book4.jpg) center;
     -webkit-animation-delay: 18s;
     -moz-animation-delay: 18s;
     -o-animation-delay: 18s;
@@ -436,7 +436,7 @@ ol,ul {
 }
 .slideshow li:nth-child(5) span {
     background-size: cover;
-    background: url(../images/sách5.jpg) center;
+    background: url(../images/book5.jpg) center;
     -webkit-animation-delay: 24s;
     -moz-animation-delay: 24s;
     -o-animation-delay: 24s;
@@ -444,7 +444,7 @@ ol,ul {
     animation-delay: 24s;
 }
 .slideshow li:nth-child(6) span {
-    background:url(../images/sách4.jpg);
+    background:url(../images/book1.jpg);
     background-size: cover;
     background-position: center;
     -webkit-animation-delay: 30s;
@@ -1257,10 +1257,10 @@ left:775px;
 
 #time .container-fluid img{
   position: absolute;
-  right: 260px;
+  right: 100px;
   bottom: -18px;
   image-rendering: pixelated;
-  filter:drop-shadow(0 0 5px black)
+  filter:drop-shadow(0 0 5px black);
 }
 
 #time .container-fluid .time2{
@@ -1310,7 +1310,7 @@ left:775px;
   height: 70vh;
   position: relative;
   display: flex;
-  top:40px;
+  top:50px;
 }
 
 #member .thumb {
@@ -1322,7 +1322,7 @@ left:775px;
     display: block; width: 100%; height: 100%;
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url("../images/chó-removebg-preview.png");
+            url("../images/giang.png");
     background-size: 0, cover;
     transform-style: preserve-3d;
     transition: all 0.5s;
@@ -1332,7 +1332,7 @@ left:775px;
     display: block; width: 100%; height: 100%;
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url("../images/mèo2-removebg-preview.png");
+            url("../images/nam.png");
     background-size: 0, cover;
     transform-style: preserve-3d;
     transition: all 0.5s;
@@ -1342,7 +1342,7 @@ left:775px;
     display: block; width: 100%; height: 100%;
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url("../images/sóc2-removebg-preview.png");
+            url("../images/hao.png");
     background-size: 0, cover;
     transform-style: preserve-3d;
     transition: all 0.5s;
@@ -1352,7 +1352,7 @@ left:775px;
     display: block; width: 100%; height: 100%;
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url("../images/thỏ2-removebg-preview.png");
+            url("../images/phat.png");
     background-size: 0, cover;
     transform-style: preserve-3d;
     transition: all 0.5s;
@@ -1362,7 +1362,7 @@ left:775px;
     display: block; width: 100%; height: 100%;
     background:
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url("../images/unnamed-removebg-preview.png");
+            url("../images/van.png");
     background-size: 0, cover;
     transform-style: preserve-3d;
     transition: all 0.5s;

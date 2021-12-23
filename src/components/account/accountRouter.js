@@ -8,6 +8,8 @@ const upload = require('../../config/multer');
 router.get('/:id', controller.get);
 // router.get('/', controller.getAll);
 
+router.get('/cart/:id', controller.renderCartPage);
+
 // POST Method
 router.post('/', controller.insert);
 

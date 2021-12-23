@@ -12,7 +12,8 @@ const accountSchema = new Schema({
   address: String,
   sex: String,
   dob: String,
-  avatar_url: String
+  avatar_url: String,
+  cart: [Object]
 }, { timestamps: true, versionKey: false });
 
 // Create account model in db
