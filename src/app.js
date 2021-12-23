@@ -11,6 +11,10 @@ const passport = require("./config/passport");
 const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/gd');
+
+// ??
+const infoRouter = require('./routes/about_us');
+
 const usersRouter = require('./routes/users');
 const confirmationRouter = require('./routes/confirmation');
 const productRouter = require('./components/product/productRouter');
@@ -48,6 +52,7 @@ app.use(function (req, res, next) {
 // Router middleware
 app.use('/', indexRouter);
 app.use('/', authRouter);
+app.use('/about_us',infoRouter);
 //app.use('/account' ,accountRouter);
 app.use('/account', loggedInUserGuard ,accountRouter);
 app.use('/products', productRouter);

@@ -617,7 +617,7 @@
 
                 // Return the modified object
                 return target;
-            };
+            }
 
             function inArray(item, arr, fromIndex) {
                 for (var i = fromIndex || 0; i < arr[LEXICON.l]; i++)
@@ -628,13 +628,13 @@
 
             function isFunction(obj) {
                 return _type(obj) == TYPES.f;
-            };
+            }
 
             function isEmptyObject(obj) {
                 for (var name in obj)
                     return false;
                 return true;
-            };
+            }
 
             function isPlainObject(obj) {
                 if (!obj || _type(obj) != TYPES.o)
@@ -654,7 +654,7 @@
                 for (key in obj) { /**/ }
 
                 return _type(key) == TYPES.u || hasOwnProperty.call(obj, key);
-            };
+            }
 
             function each(obj, callback) {
                 var i = 0;
@@ -673,7 +673,7 @@
                 }
 
                 return obj;
-            };
+            }
 
             function isArrayLike(obj) {
                 var length = !!obj && [LEXICON.l] in obj && obj[LEXICON.l];
@@ -947,7 +947,7 @@
                 }
 
                 return base;
-            };
+            }
 
             FakejQuery[LEXICON.p] = {
 
@@ -6203,7 +6203,7 @@
                         changePropertyName('h', _strHeight); //change h to height
                         delete extended.c; //delete c (the 'changed' prop)
                         return extended;
-                    };
+                    }
                     var obj = {
                         destroyed: !!prepare(_destroyed),
                         sleeping: !!prepare(_sleeping),
