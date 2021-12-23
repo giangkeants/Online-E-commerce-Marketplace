@@ -52,13 +52,14 @@
 
 #head .logo{
     width: 100%;
-    height: 140px;
+    height: 5px;
     justify-content: center;
     display: flex;
     text-align: center;
+    position:absolute;
+    top:-20px;
+    padding-top: 0;
 }
-
-
 
 #head .menu{
     border-top:1px solid #e7e7e7;
@@ -702,7 +703,7 @@ ol,ul {
 
 .word {
   font-family: 'Anton', sans-serif;
-  perspective: 1000px;
+  perspective: 10px;
 }
 
 .word span {
@@ -711,7 +712,7 @@ ol,ul {
   font-size: 50px;
   user-select: none;
   line-height: .8;
-  margin-top: 80px;
+  margin-top: 0;
   font-family: 'Zen Kurenaido', sans-serif;
 }
 
