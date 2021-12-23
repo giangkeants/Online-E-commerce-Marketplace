@@ -594,11 +594,12 @@
                                                   </span>
                                               </a>
                                           </div>
-
-
-
-
-                                          <span class="icon-account flaticon-shape"></span>
+                                            {{#if user}}
+                                          <a href="/account/{{user.id}}"><span class="icon-account flaticon-shape"><i style="font-size: 1.5rem">Hello, {{user.username}}</i></span></a>
+                                          {{else}}
+                                          <a href="/login"><span class="icon-account flaticon-shape"><small style="font-size: 1.5rem">Login</small></span></a>
+                                          {{/if}}
+{{!--  <span class="icon-account flaticon-shape"></span> --}}
                                           <span class="icon-search flaticon-magnifying-glass"></span>
                                           <div class="account-control">
                                               <div class="inner">
@@ -663,37 +664,38 @@
                                                   </span>
                                               </a>
                                           </div>
-                                          <span class="icon-account flaticon-shape"></span>
+                                          <span class="icon-account flaticon-shape">
+                                          </span>
                                           <span class="icon-search flaticon-magnifying-glass"></span>
                                           <div class="account-control full-height">
-                                              <div class="inner">
-                                                  <span class="close-account-control"></span>
-                                                  <ul id="menu-acount-menu-1" class="account-menu">
-                                                      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-315 menu-item-has-children"><a title="My Account" href="https://mazano.kutethemes.net/my-account/">My Account</a>
-                                                          <ul role="menu" class=" sub-menu">
-                                                              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-316"><a href="https://mazano.kutethemes.net/my-account/">Login</a></li>
-                                                              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-317"><a title="Wishlist" href="https://mazano.kutethemes.net/wishlist/">Wishlist</a></li>
-                                                              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a title="Checkout" href="https://mazano.kutethemes.net/checkout/">Checkout</a></li>
-                                                          </ul>
-                                                      </li>
-                                                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-319 menu-item-has-children menu-item-currency-switcher">
-                                                          <a href="#"></a>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                          <div class="search-control full-height">
-                                              <div class="inner">
-                                                  <span class="close-search-control"></span>
-                                                  <form method="get" action="home.html" class="box-search kt_wcajs">
-                                                      <h3 class="title">Search Now !</h3>
-                                                      <input type="hidden" name="post_type" value="product">
-                                                      <div class="box-search-inner">
-                                                          <input class="search-field kt_wcajs_input" value="" type="text" name="s" placeholder="Your search here..."></div>
-                                                      <div class="kt_wcajs_result"></div>
-                                                  </form>
-                                              </div>
-                                          </div>
+{{!--                                               <div class="inner"> --}}
+{{!--                                                   <span class="close-account-control"></span> --}}
+{{!--                                                   <ul id="menu-acount-menu-1" class="account-menu"> --}}
+{{!--                                                       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-315 menu-item-has-children"><a title="My Account" href="https://mazano.kutethemes.net/my-account/">My Account</a> --}}
+{{!--                                                           <ul role="menu" class=" sub-menu"> --}}
+{{!--                                                               <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-316"><a href="https://mazano.kutethemes.net/my-account/">Login</a></li> --}}
+{{!--                                                               <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-317"><a title="Wishlist" href="https://mazano.kutethemes.net/wishlist/">Wishlist</a></li> --}}
+{{!--                                                               <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a title="Checkout" href="https://mazano.kutethemes.net/checkout/">Checkout</a></li> --}}
+{{!--                                                           </ul> --}}
+{{!--                                                       </li> --}}
+{{!--                                                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-319 menu-item-has-children menu-item-currency-switcher"> --}}
+{{!--                                                           <a href="#"></a> --}}
+{{!--                                                       </li> --}}
+{{!--                                                   </ul> --}}
+{{!--                                               </div> --}}
+{{!--                                           </div> --}}
+{{!--                                           <div class="search-control full-height"> --}}
+{{!--                                               <div class="inner"> --}}
+{{!--                                                   <span class="close-search-control"></span> --}}
+{{!--                                                   <form method="get" action="home.html" class="box-search kt_wcajs"> --}}
+{{!--                                                       <h3 class="title">Search Now !</h3> --}}
+{{!--                                                       <input type="hidden" name="post_type" value="product"> --}}
+{{!--                                                       <div class="box-search-inner"> --}}
+{{!--                                                           <input class="search-field kt_wcajs_input" value="" type="text" name="s" placeholder="Your search here..."></div> --}}
+{{!--                                                       <div class="kt_wcajs_result"></div> --}}
+{{!--                                                   </form> --}}
+{{!--                                               </div> --}}
+{{!--                                           </div> --}}
                                       </div>
                                   </div>
                               </div>
