@@ -7,13 +7,11 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
   // Schema attributes are defined here
   name: { type: String },
-  image_url: String,
+  category: String,
   author: String,
   price: Number,
-  category: String,
-  stock: Number,
-  discount: Object,
-  offer: Object
+  description: String,
+  image_url: String
 }, { timestamps: true, versionKey: false });
 
 
