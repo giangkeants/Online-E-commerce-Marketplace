@@ -10,37 +10,48 @@
     <title>Document</title>
 </head>
 <body>-->
-    <div class="container">
-        <div class="menu">
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Orders</a></li>
-                <li><a href="#">Upload</a></li>
-                <li><a href="#">Addresses</a></li>
-                <li><a href="#">Account Details</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </div>
-        <div class="content1">
-            <label>Book's name*</label> <br>
-            <input type="text"> <br>
-            <label>Types*</label> <br>
-            <input type="text"> <br>
-            <label>Author name*</label> <br>
-            <input type="text"> <br>    
-            <p>Decription</p>
-            
-        </div>
-        <div class="content2">
-            <label>Upload image</label> <br>
-            <input type="text"> <br>
-            <label>Published year*</label> <br>
-            <input type="text"> <br>
-        </div>
+<div class="container">
+    <div class="menu">
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Upload</a></li>
+            <li><a href="#">Addresses</a></li>
+            <li><a href="#">Account Details</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
     </div>
-    <div class="inputde">
-    <input type="text" id="inputdecri"> <br>
-    <button>UPLOAD</button>
+    <form action="/products" method="POST">
+        <div class="content1">
+            <div class="form-group">
+                <label for="inputName">Book's name</label>
+                <input type="text" id="inputName" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="inputCategory">Category</label>
+                <input type="text" id="inputCategory" name="category" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="inputAuthor">Author</label>
+                <input type="text" id="inputAuthor" name="author" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="inputPrice">Price</label>
+                <input type="text" id="inputPrice" name="price" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="inputDes">Description</label>
+                <input type="text" id="inputDes" name="description" class="form-control">
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="/products" class="btn btn-secondary">Hủy</a>
+                    <input type="submit" value="Thêm sản phẩm" class="btn btn-success float-right">
+                </div>
+            </div>
+    </form>
+</div>
+
 </div>
 <!--</body>
 </html>-->
