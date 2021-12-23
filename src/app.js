@@ -21,6 +21,7 @@ const productRouter = require('./components/product/productRouter');
 const authRouter = require('./components/auth/authRouter');
 const loggedInUserGuard = require('./middlewares/loggedInUserGuard');
 const accountRouter = require('./components/account/accountRouter');
+const uploadRouter = require('./components/upload/uploadRouter')
 
 // try to connect to database
 const db = require('./config/database');
@@ -56,6 +57,7 @@ app.use('/about_us',infoRouter);
 //app.use('/account' ,accountRouter);
 app.use('/account', loggedInUserGuard ,accountRouter);
 app.use('/products', productRouter);
+app.use('/upload',loggedInUserGuard,uploadRouter);
 app.use('/confirmation', loggedInUserGuard, confirmationRouter);
 app.use('/users', usersRouter);
 
