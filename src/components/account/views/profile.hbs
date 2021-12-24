@@ -27,12 +27,12 @@
 </section>
 
 <section class="blog_area single-post-area py-80px section-margin--small">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 posts-list">
-				<div class="single-post row">
-					<div class="col-lg-3  col-md-3">
-						<div class="blog_info text-right">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                <div class="single-post row">
+                    <div class="col-lg-3  col-md-3">
+                        <div class="blog_info text-right">
 
                             <ul style="list-style-type: none; font-size: 17px">
                                 <li>
@@ -55,30 +55,35 @@
                     <div class="col-lg-9 col-md-9 blog_details">
                         <h2>Account details</h2>
                         <div class="comment-form">
-                            <form action="/account/{{user._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
-{{!--                                 <div class="form-group"> --}}
-{{!--                                      --}}
-{{!--                                     <div class="form-group col-lg-6 col-md-6 email"> --}}
-{{!--                                         <label style="display: flex">Số điện thoại</label> --}}
-{{!--                                         <input value="{{user.phone}}" type="text" class="form-control" name="phone" id="phone" --}}
-{{!--                                             placeholder="Số điện thoại" onfocus="this.placeholder = ''" --}}
-{{!--                                             onblur="this.placeholder = 'Nhập sđt'"> --}}
-{{!--                                     </div> --}}
-{{!--                                 </div> --}}
+                            <form action="/account/{{user._id}}?_method=PUT" method="POST"
+                                enctype="multipart/form-data">
+                                {{!-- <div class="form-group"> --}}
+                                    {{!-- --}}
+                                    {{!-- <div class="form-group col-lg-6 col-md-6 email"> --}}
+                                        {{!-- <label style="display: flex">Số điện thoại</label> --}}
+                                        {{!-- <input value="{{user.phone}}" type="text" class="form-control"
+                                            name="phone" id="phone" --}} {{!-- placeholder="Số điện thoại"
+                                            onfocus="this.placeholder = ''" --}} {{!--
+                                            onblur="this.placeholder = 'Nhập sđt'"> --}}
+                                        {{!-- </div> --}}
+                                    {{!-- </div> --}}
                                 <div class="form-group col-lg-7">
                                     <label style="display: flex"><b>Name</b></label>
                                     <input value="{{user.name}}" type="text" class="form-control" name="name" id="name"
                                         placeholder="Name" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Your Name'"></div>
+                                        onblur="this.placeholder = 'Your Name'">
+                                </div>
                                 <div class="form-group col-lg-4">
                                     <label style="display: flex"><b>Phone Number</b></label>
-                                    <input value="{{user.phone}}" type="phone" class="form-control" name="phone" id="phone"
-                                        placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Phone Number'">
+                                    <input value="{{user.phone}}" type="phone" class="form-control" name="phone"
+                                        id="phone" placeholder="Phone Number" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Your Phone Number'">
                                 </div>
                                 <div class="form-group col-lg-7">
                                     <label style="display: flex"><b>Email</b></label>
-                                    <input value="{{user.email}}" type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email'">
+                                    <input value="{{user.email}}" type="email" class="form-control" name="email"
+                                        id="email" placeholder="Email" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Your Email'">
                                 </div>
                                 <div class="form-group col-lg-4">
                                     <label style="display: flex"><b>Date of Birth</b></label>
@@ -88,17 +93,18 @@
                                 </div>
                                 <div class="form-group col-lg-7">
                                     <label style="display: flex"><b>Address</b></label>
-                                    <input value="{{user.address}}" type="text" class="form-control" name="address" id="address"
-                                        placeholder="Address" onfocus="this.placeholder = ''"
+                                    <input value="{{user.address}}" type="text" class="form-control" name="address"
+                                        id="address" placeholder="Address" onfocus="this.placeholder = ''"
                                         onblur="this.placeholder = 'Your Address'">
                                 </div>
 
                                 <div class="form-group col-lg-4">
                                     <label style="display: flex"><b>Sex</b></label>
-                                    {{!-- <input value="{{user.sex}}" type="text" class="form-control" name="sex" id="sex"
-                                        placeholder="Giới tính" onfocus="this.placeholder = ''"
+                                    {{!-- <input value="{{user.sex}}" type="text" class="form-control" name="sex"
+                                        id="sex" placeholder="Giới tính" onfocus="this.placeholder = ''"
                                         onblur="this.placeholder = 'Nhập giới tính'"> --}}
-                                    <select class="form-select col-lg-12" name="sex" aria-label="Default select example" style="padding-bottom:6px;padding-top:6px">
+                                    <select class="form-select col-lg-12" name="sex" aria-label="Default select example"
+                                        style="padding-bottom:6px;padding-top:6px">
                                         {{#if (is_equals user.sex "Male")}}
                                         <option selected value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -113,43 +119,47 @@
                                     </select>
 
                                 </div>
-                                    <input id="image_url" name="avatar" style="display: none;" type="file" accept=".jpg,.jpeg,.png">
-                                    <input type="submit" value="Update" class="button button-postComment button--active"
-                                        id="submit-button" style="padding-top:10px;padding-bottom:10px;margin-top:10px">
+                                <input id="image_url" name="avatar" style="display: none;" type="file"
+                                    accept=".jpg,.jpeg,.png">
+                                <input type="submit" value="Update" class="button button-postComment button--active"
+                                    id="submit-button" style="padding-top:10px;padding-bottom:10px;margin-top:10px">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-			<div class="col-lg-4">
-				<div class="blog_right_sidebar">
-					<aside class="single_sidebar_widget author_widget">
-						{{#if user.avatar_url}}
-						<img class="avatar_right" id="avatar" src="{{user.avatar_url}}" alt="" width=200px style="margin-bottom:10px">
-						{{else}}
-						<img class="avatar_right" id="avatar" src="/img/male_avatar.svg" alt="" width=200px  style="margin-bottom:10px">
-						{{/if}}
-						<h4>{{user.username}}</h4>
-						<input class="btn-light" type="button" id="loadFileXml" value="Change Avatar"
-							onclick="document.getElementById('image_url').click();" style="margin-bottom:10px"/>
-						<div class="social_icon">
-							<a href="#">
-								<i class="fab fa-facebook-f" style="font-size:30px;margin-right:5px"></i>
-							</a>
-							<a href="#">
-								<i class="fab fa-twitter" style="font-size:30px;margin-right:5px"></i>
-							</a>
-							<a href="#">
-								<i class="fab fa-github" style="font-size:30px;margin-right:5px"></i>
-							</a>
-							<a href="#">
-								<i class="fab fa-behance" style="font-size:30px;margin-right:5px"></i>
-							</a>
-						</div>
-						<div class="br"></div>
-					</aside>
-				</div>
-			</div>
-		</div>
-	</div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget author_widget">
+                        {{#if user.avatar_url}}
+                        <img class="avatar_right" id="avatar" src="{{user.avatar_url}}" alt="" width=200px
+                            style="margin-bottom:10px">
+                        {{else}}
+                        <img class="avatar_right" id="avatar" src="/img/male_avatar.svg" alt="" width=200px
+                            style="margin-bottom:10px">
+                        {{/if}}
+                        <h4>{{user.username}}</h4>
+                        <input class="btn-light" type="button" id="loadFileXml" value="Change Avatar"
+                            onclick="document.getElementById('image_url').click();" style="margin-bottom:10px" />
+                        <div class="social_icon">
+                            <a href="#">
+                                <i class="fab fa-facebook-f" style="font-size:30px;margin-right:5px"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-twitter" style="font-size:30px;margin-right:5px"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github" style="font-size:30px;margin-right:5px"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-behance" style="font-size:30px;margin-right:5px"></i>
+                            </a>
+                        </div>
+                        <div class="br"></div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+<script src="../js/handleChooseImgOnchange.js"></script>
