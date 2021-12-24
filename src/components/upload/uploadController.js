@@ -29,7 +29,7 @@ exports.get = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-}*/
+}
 
 /**
  * Lay tat ca offer va discount tu database
@@ -91,11 +91,11 @@ exports.getAll = async (req, res) => {
  */
 exports.insert = async (req, res) => {
   try {
-    await service.insert(req.body);
-    // const products = await service.paging(req.query.page);
+    await service.insert(req.body, req.files);
+    //const products = await service.paging(req.query.page);
     // res.status(201).json(newProduct);
     // res.render('products', { products });
-    res.redirect('/add-new-product');
+    res.redirect('/product/views/products');
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

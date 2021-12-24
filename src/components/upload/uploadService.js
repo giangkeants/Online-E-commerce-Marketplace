@@ -1,4 +1,5 @@
 const model = require('../product/productModel');
+const cloudinary = require("../../config/cloudinary")
 
 /**
  * Lay 1 product bang id <br>
@@ -57,24 +58,46 @@ exports.getAll = async () => {
  * Nho them await vao truoc ham tra ve neu khong ham tra ve Promise
  *
  * @param newProduct
+ * @param images
  * @returns {Promise<{product: model}>}
  */
-exports.insert = async (newProduct) => {
-  //let { discount, offer } = newProduct;
+exports.insert = async (newProduct, images) => {
+  try {
+  let newProduct;
 
   //discount = parseFloat(discount.split(':')[1].trim());
 
   //newProduct.discount = { rate: discount };
   //newProduct.offer = { content: offer };
+  
+    const product = new model(newProduct);
+    const addedProduct = await product.save();
 
-  const product = new model(newProduct);
-  try {
-    return await product.save();
-  } catch (err) {
-    throw err;
-  }
+    const id = addedProduct._id;
+    const folderName = `product_image/${newProduct.name}`;
+
+    // Upload images
+    for (let i = 0; i < images.length; i++) {
+      if (images[i]) {
+        await cloudinary.uploader.upload(images[i].path, {
+          public_id: `${id}_${i}`,
+          folder: folderName,
+          use_filename: true,
+        });
+      }
+    }
+    
+    /*
+     Lay image url
+     Neu khong co avatar duoc up len, url bo trong
+    */
+     await model
+     .findByIdAndUpdate(id, { image_url: folderName }, { new: true })
+     .lean();
+} catch (err) {
+ throw err;
 }
-
+}
 /**
  * Tim san pham bang id, update thong tin san pham ton tai trong database
  *
