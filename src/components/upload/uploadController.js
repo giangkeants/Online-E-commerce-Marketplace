@@ -91,11 +91,11 @@ exports.getAll = async (req, res) => {
  */
 exports.insert = async (req, res) => {
   try {
-    await service.insert(req.body);
+    await service.insert(req.body, req.file);
     // const products = await service.paging(req.query.page);
     // res.status(201).json(newProduct);
     // res.render('products', { products });
-    res.redirect('/add-new-product');
+    res.redirect('/products');
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -113,7 +113,8 @@ exports.update = async (req, res) => {
     const updatedProduct = await service.update(req.params.id, req.body);
     // res.json(updatedProduct);
     // res.render('edit_products', { updatedProduct });
-    res.redirect('/products');
+    // REDIRECT VO CHO PRODUCT MOI
+    res.redirect('/product/'+updatedProduct.id);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
