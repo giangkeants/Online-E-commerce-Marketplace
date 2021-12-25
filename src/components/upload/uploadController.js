@@ -91,19 +91,11 @@ exports.getAll = async (req, res) => {
  */
 exports.insert = async (req, res) => {
   try {
-<<<<<<< HEAD
     await service.insert(req.body, req.files);
     //const products = await service.paging(req.query.page);
     // res.status(201).json(newProduct);
     // res.render('products', { products });
     res.redirect('/product/views/products');
-=======
-    await service.insert(req.body, req.file);
-    // const products = await service.paging(req.query.page);
-    // res.status(201).json(newProduct);
-    // res.render('products', { products });
-    res.redirect('/products');
->>>>>>> 254d9b57b29fe3e523bd5eb21e53857004ec353f
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -121,8 +113,7 @@ exports.update = async (req, res) => {
     const updatedProduct = await service.update(req.params.id, req.body);
     // res.json(updatedProduct);
     // res.render('edit_products', { updatedProduct });
-    // REDIRECT VO CHO PRODUCT MOI
-    res.redirect('/product/'+updatedProduct.id);
+    res.redirect('/products');
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
