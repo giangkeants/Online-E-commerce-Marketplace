@@ -116,17 +116,21 @@
                     </div>
                 </div>
             </div>
-            <script src="/js/uploadImageHandler.js"></script>
-            <script>
-                function preview() {
-                    frame.src = URL.createObjectURL(event.target.files[0]);
-                }
+        </div>
+    </div>
+</section>
 
-                function clearImage() {
-                    document.getElementById('formFile').value = null;
-                    frame.src = "";
-                }
-            </script>
+<script src="/js/uploadImageHandler.js"></script>
+<script>
+    function preview() {
+        frame.src = URL.createObjectURL(event.target.files[0]);
+    }
 
-            <!--</body>
+    function clearImage() {
+        document.getElementById('formFile').value = null;
+        frame.src = "";
+    }
+</script>
+
+<!--</body>
 </html>-->

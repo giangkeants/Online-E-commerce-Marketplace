@@ -72,14 +72,19 @@ exports.insert = async (newProduct, image) => {
 
     const id = addedProduct._id;
     const folderName = `product_image/${newProduct.name}`;
-    await cloudinary.uploader.upload(image.path, {
+    result = await cloudinary.uploader.upload(image.path, {
                 public_id: id,
                 folder: folderName,
                 use_filename: true,
             });
-
+    
+    /*
+     Lay url
+     Neu khong co hinh duoc up len, url bo trong
+    */
+    const { url } = result ?? "";
     await model
-        .findByIdAndUpdate(id, { image_url: folderName }, { new: true })
+        .findByIdAndUpdate(id, { image_url: url }, { new: true })
         .lean();
 
     try {
