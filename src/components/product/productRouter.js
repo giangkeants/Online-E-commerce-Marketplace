@@ -9,7 +9,7 @@ router.get('/', controller.paging);
 router.get('/:id', controller.get);
 
 // POST Method
-router.post('/',  controller.insert);
+router.post('/', controller.insert);
 
 // PUT Method
 router.put('/:id', controller.update);
