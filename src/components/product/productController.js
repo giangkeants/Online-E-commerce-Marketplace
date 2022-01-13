@@ -27,6 +27,11 @@ exports.paging = async (req, res) => {
 
     const results = {};
     results.curr = page;
+
+    results.first = (page - 1) * 12 + 1;
+    results.last = (page -1) * 12 + products.length;
+    results.length = (await productService.getAll()).length;
+
     // Paginated
     const startIdx = (page - 1) * 12;
     if (products.length >= 12) {
@@ -48,7 +53,7 @@ exports.paging = async (req, res) => {
     }
     results.products = products;
 
-    // results.products = products;
+
     res.render('product/views/products', { results });
     // res.status(200).json(results);
   } catch (err) {
