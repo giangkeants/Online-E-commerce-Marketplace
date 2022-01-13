@@ -1,10 +1,29 @@
+    <div style='background-image: none;' class=kt-page-heading>
+        <div class=container>
+            <div class=wapper style=height:200px>
+                <div class=inner>
+                    <nav class=woocommerce-breadcrumb>
+                    <span class=trail-begin>
+                        <a href="/" title="Book Market">Home</a>
+                        <a href="/products" title="Products">Products</a>
+                    </span>
+                        <span class="sep navigation-pipe"> </span>
+                    <span class=trail-end>Detail
+                    </span>
+                    </nav>
+                    <h1 class="page-title">Product detail</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <!--================Single Product Area =================-->
 <div class="product_image_area">
 	<div class="container">
 		<div class="row s_product_inner">
-			<div class="col-lg-6">
+			<div class="col-lg-4">
 				<div class="owl-carousel owl-theme s_Product_carousel">
-					<div class="single-prd-item" style="width:570px">
+					<div class="single-prd-item" style="width:400px; margin-bottom:20px; margin-right:20px">
 						<img class="img-fluid" src="{{product.image_url}}" alt="">
 					</div>
 				</div>
@@ -12,15 +31,16 @@
 			<div class="col-lg-5 offset-lg-1">
 				<div class="s_product_text">
 					<h1>{{product.name}}</h1>
-					<h2>Giá: {{product.price}}₫</h2>
-					<h2>Thể loại sách: {{product.category}}</h2>
+					<h2>Price: {{product.price}}₫</h2>
+					<h2>Category: {{product.category}}</h2>
 					<div class="product_count">
-						<label for="qty">Số lượng:</label>
+						<label for="qty">Quantity:</label>
 
-						<input type="number" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:"
-							class="input-text qty">
+						<input type="number" name="qty" id="sst" value="1" title="Quantity:"
+							class="input-text qty" style="width: 178px">
 
-						<a class="button primary-btn" href="/account/cart/:id">Thêm vào giỏ hàng</a>
+						<a class="button primary-btn" href="/account/cart/:id" style="margin-top: 20px;">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD TO CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 					</div>
 					<div class="card_area d-flex align-items-center">
 						<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
@@ -36,10 +56,10 @@
 <!--================Product Description Area =================-->
 <section class="product_description_area">
 	<div class="container">
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom:20px">
 			<li class="nav-item">
 				<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-					aria-selected="true">Mô tả</a>
+					aria-selected="true"><b>Description</b></a>
 			</li>
 			{{!-- <li class="nav-item">
 				<a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
@@ -47,11 +67,11 @@
 			</li> --}}
 			<li class="nav-item">
 				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-					aria-controls="contact" aria-selected="false">Đánh giá</a>
+					aria-controls="contact" aria-selected="false"><b>Feedback</b></a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
-					aria-selected="false">Reviews</a>
+					aria-selected="false"><b>Ratings</b></a>
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
@@ -239,40 +259,40 @@
 									laboris nisi ut aliquip ex ea
 									commodo</p>
 							</div>
-							<div class="review_item reply">
-								<div class="media">
-									<div class="d-flex">
-										<img src="img/product/review-2.png" alt="">
-									</div>
-									<div class="media-body">
-										<h4>Blake Ruiz</h4>
-										<h5>12th Feb, 2018 at 05:56 pm</h5>
-										<a class="reply_btn" href="#">Reply</a>
-									</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-									incididunt ut labore et
-									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea
-									commodo</p>
-							</div>
-							<div class="review_item">
-								<div class="media">
-									<div class="d-flex">
-										<img src="img/product/review-3.png" alt="">
-									</div>
-									<div class="media-body">
-										<h4>Blake Ruiz</h4>
-										<h5>12th Feb, 2018 at 05:56 pm</h5>
-										<a class="reply_btn" href="#">Reply</a>
-									</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-									incididunt ut labore et
-									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea
-									commodo</p>
-							</div>
+{{!-- 							<div class="review_item reply"> --}}
+{{!-- 								<div class="media"> --}}
+{{!-- 									<div class="d-flex"> --}}
+{{!-- 										<img src="img/product/review-2.png" alt=""> --}}
+{{!-- 									</div> --}}
+{{!-- 									<div class="media-body"> --}}
+{{!-- 										<h4>Blake Ruiz</h4> --}}
+{{!-- 										<h5>12th Feb, 2018 at 05:56 pm</h5> --}}
+{{!-- 										<a class="reply_btn" href="#">Reply</a> --}}
+{{!-- 									</div> --}}
+{{!-- 								</div> --}}
+{{!-- 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor --}}
+{{!-- 									incididunt ut labore et --}}
+{{!-- 									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco --}}
+{{!-- 									laboris nisi ut aliquip ex ea --}}
+{{!-- 									commodo</p> --}}
+{{!-- 							</div> --}}
+{{!-- 							<div class="review_item"> --}}
+{{!-- 								<div class="media"> --}}
+{{!-- 									<div class="d-flex"> --}}
+{{!-- 										<img src="img/product/review-3.png" alt=""> --}}
+{{!-- 									</div> --}}
+{{!-- 									<div class="media-body"> --}}
+{{!-- 										<h4>Blake Ruiz</h4> --}}
+{{!-- 										<h5>12th Feb, 2018 at 05:56 pm</h5> --}}
+{{!-- 										<a class="reply_btn" href="#">Reply</a> --}}
+{{!-- 									</div> --}}
+{{!-- 								</div> --}}
+{{!-- 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor --}}
+{{!-- 									incididunt ut labore et --}}
+{{!-- 									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco --}}
+{{!-- 									laboris nisi ut aliquip ex ea --}}
+{{!-- 									commodo</p> --}}
+{{!-- 							</div> --}}
 						</div>
 					</div>
 					<div class="col-lg-6">
