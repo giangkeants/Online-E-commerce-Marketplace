@@ -1948,15 +1948,27 @@
                             </ul>
                             <!-- Hiển thị thông tin sản phẩm. (end)-->
                             <!-- Chuyển trang tìm kiếm. -->
+                            
+                            <script src="/js/pagination.js"></script>
+                            <style>
+
+                            .woocommerce-pagination a {
+                              color: black;
+                              float: left;
+                              padding: 8px 16px;
+                              text-decoration: none;
+                              transition: background-color .3s;
+                            }
+                            .woocommerce-pagination a:hover:not(.active) {background-color: #ddd;}
+                            </style>
+
                             <nav class="woocommerce-pagination">
-                                <ul class="page-numbers">
-                                    <li><a class="page-numbers" href="?page={{results.prev}}">{{results.prev}}</a>
+                                <ul class="page-numbers" >
+                                    <li>
+                                    <a style= "margin-right: 5px;margin-left:5px" class="page-numbers" id="prev-page-item" href="?page={{results.prev}}">{{results.prev}}</a>
+                                    <a style= "margin-right: 5px;margin-left:5px" class="page-numbers" id="curr-page-item" href="?page={{results.curr}}">{{results.curr}}</a>
+                                    <a style= "margin-right: 5px;margin-left:5px" class="page-numbers" id="next-page-item" href="?page={{results.next}}">{{results.next}}</a>
                                     </li>
-                                    <li><a class="page-numbers" href="?page={{results.curr}}">{{results.curr}}</a>
-                                    </li>
-                                    <li><a class="page-numbers" href="?page={{results.next}}">{{results.next}}</a>
-                                    </li>
-                                    {{!-- <li><a class="next page-numbers" href="#">Next</a></li> --}}
                                 </ul>
                             </nav>
                             <!-- Chuyển trang tìm kiếm. (end)-->

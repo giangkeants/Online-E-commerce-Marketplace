@@ -21,6 +21,7 @@ exports.get = async (req, res) => {
 
 exports.paging = async (req, res) => {
   try {
+
     const page = parseInt(req.query.page) || 1; // trang thu n
     const products = await productService.paging(page);
 
