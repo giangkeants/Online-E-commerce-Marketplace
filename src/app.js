@@ -24,6 +24,7 @@ const uploadRouter = require('./components/upload/uploadRouter')
 
 // try to connect to database
 const db = require('./config/database');
+
 db.connect();
 
 const app = express();
@@ -44,36 +45,36 @@ app.use(session({ secret: process.env.SESSION_SECRET_KEY }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(function (req, res, next) {
-  res.locals.user = req.user;
-  next()
+app.use(function(req, res, next) {
+    res.locals.user = req.user;
+    next()
 })
 
 // Router middleware
 app.use('/', indexRouter);
 app.use('/', authRouter);
-app.use('/about_us',infoRouter);
+app.use('/about_us', infoRouter);
 //app.use('/account' ,accountRouter);
-app.use('/account', loggedInUserGuard ,accountRouter);
+app.use('/account', loggedInUserGuard, accountRouter);
 app.use('/products', productRouter);
-app.use('/upload',loggedInUserGuard,uploadRouter);
+app.use('/upload', loggedInUserGuard, uploadRouter);
 app.use('/confirmation', loggedInUserGuard, confirmationRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
