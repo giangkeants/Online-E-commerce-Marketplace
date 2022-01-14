@@ -115,4 +115,26 @@ $(function() {
   
 });
 
+$("#contactForm input[type=submit]").on("click", function (event) {
+  event.preventDefault();
+  $.post(
+      `/api/products/${$("#product_id").val()}/comments`,
+      {
+        content: $("#message").val(),
+      },
+      function (data) {
+        const commentTemplate = Handlebars.compile(
+            document.getElementById("comment-template").innerHTML
+        );
+        const commentHtml = commentTemplate(data);
+        $("#comment-list").prepend(commentHtml);
+        document.getElementById("message").value = "";
+        console.log(commentHtml);
+      }
+  ).fail(function (data) {
+    if(data.status === 401)
+      window.location.href = `/login?page=/products/${$('#product_id').val()}`;
+  });
+});
+
 

@@ -1,3 +1,5 @@
+
+
     <div style='background-image: none;' class=kt-page-heading>
         <div class=container>
             <div class=wapper style=height:200px>
@@ -31,12 +33,12 @@
 			<div class="col-lg-5 offset-lg-1">
 				<div class="s_product_text">
 				<style>
-				e{font-weight: normal}
+				eeeeee {font-weight: normal}
 				</style>
 					<h1 style="width: 900px">{{product.name}}</h1>
-					<h2 style="width: 700px">Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <e>{{product.author}}</e></h2>
-					<h2 style="margin-top:-10px">Category: &nbsp;&nbsp;&nbsp;<e>{{product.category}}</e></h2>
-					<h2 style="margin-top:-10px">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<e>{{product.price}}₫</e></h2>
+					<h2 style="width: 700px">Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <eeeeee>{{product.author}}</eeeeee></h2>
+					<h2 style="margin-top:-10px">Category: &nbsp;&nbsp;&nbsp;<eeeeee>{{product.category}}</eeeeee></h2>
+					<h2 style="margin-top:-10px">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<eeeeee>{{product.price}}₫</eeeeee></h2>
 
 					<div class="product_count">
 						<label for="qty">Quantity:</label>
@@ -165,26 +167,29 @@
 					<div class="col-lg-6">
 						<div class="review_box">
 							<h4>Post a comment</h4>
-							<form class="row contact_form" action="contact_process.php" method="post" id="contactForm"
+
+{{!-- 								<div class="col-md-12"> --}}
+{{!-- 									<div class="form-group"> --}}
+{{!-- 										<input type="text" class="form-control" id="name" name="name" --}}
+{{!-- 											placeholder="Your Full name"> --}}
+{{!-- 									</div> --}}
+{{!-- 								</div> --}}
+{{!-- 								<div class="col-md-12"> --}}
+{{!-- 									<div class="form-group"> --}}
+{{!-- 										<input type="email" class="form-control" id="email" name="email" --}}
+{{!-- 											placeholder="Email Address"> --}}
+{{!-- 									</div> --}}
+{{!-- 								</div> --}}
+{{!-- 								<div class="col-md-12"> --}}
+{{!-- 									<div class="form-group"> --}}
+{{!-- 										<input type="text" class="form-control" id="number" name="number" --}}
+{{!-- 											placeholder="Phone Number"> --}}
+{{!-- 									</div> --}}
+{{!-- 								</div> --}}
+                            <form class="row contact_form" action="contact_process.php" method="post" id="contactForm"
 								novalidate="novalidate">
-								<div class="col-md-12">
-									<div class="form-group">
-										<input type="text" class="form-control" id="name" name="name"
-											placeholder="Your Full name">
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<input type="email" class="form-control" id="email" name="email"
-											placeholder="Email Address">
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<input type="text" class="form-control" id="number" name="number"
-											placeholder="Phone Number">
-									</div>
-								</div>
+                                <input type="hidden" value="{{product._id}}" id="product_id" name="productId">
+
 								<div class="col-md-12">
 									<div class="form-group">
 										<textarea class="form-control" name="message" id="message" rows="1"
@@ -192,7 +197,7 @@
 									</div>
 								</div>
 								<div class="col-md-12 text-right">
-									<button type="submit" value="submit" class="btn primary-btn">Submit Now</button>
+									<button type="submit" value="submit" class="btn primary-btn" id="submit-button">Submit Now</button>
 								</div>
 							</form>
 						</div>
