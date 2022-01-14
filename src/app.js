@@ -12,7 +12,6 @@ const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/gd');
 
-// ??
 const infoRouter = require('./routes/about_us');
 
 const usersRouter = require('./routes/users');

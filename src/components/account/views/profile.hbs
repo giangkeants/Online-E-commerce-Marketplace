@@ -14,7 +14,7 @@
     <div class="container h-100">
         <div class="blog-banner">
             <div class="text-center">
-                <h1>Profile</h1>
+                <h1>{{user.username}}'s Profile</h1>
                 <nav aria-label="breadcrumb" class="banner-breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -27,121 +27,139 @@
 </section>
 
 <section class="blog_area single-post-area py-80px section-margin--small">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 posts-list">
-				<div class="single-post row">
-					<div class="col-lg-3  col-md-3">
-						<div class="blog_info text-right">
-                            <ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                <div class="single-post row">
+                    <div class="col-lg-3  col-md-3">
+                        <div class="blog_info text-right">
+
+                            <ul style="list-style-type: none; font-size: 17px">
                                 <li>
-                                    <a href="/">Trang chủ
+                                    <a href="/">Homepage
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">Quản lý đơn hàng
+                                    <a href="/account/cart/{{user.id}}">My Cart
                                     </a>
                                 </li>
-                                <li><a href="#">Upload</a></li>
-                                <li><a href="#">Thay đổi mật khẩu</a></li>
+                                <li><a href="/upload/add-new-product">Add a new product</a></li>
+                                <li><a href="#">Change Password</a></li>
                                 <!--chinh lai cai khung bọc mấy cái này-->
-                                <li><a href="#">Chi tiết tài khoản</a></li>
-                                <li><a href="/logout">Đăng xuất</a></li>
+                                <li><a href="/account/{{user.id}}">Account Details</a></li>
+                                <li><a href="/logout">Logout</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-lg-9 col-md-9 blog_details">
-                        <h2>Thông tin tài khoản</h2>
+                        <h2>Account details</h2>
                         <div class="comment-form">
-                            <form action="/account/{{user._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
-                                <div class="form-group form-inline">
-                                    <div class="form-group col-lg-6 col-md-6 name">
-                                        <label style="display: flex">Họ tên</label>
-                                        <input value="{{user.name}}" type="text" class="form-control" name="name" id="name"
-                                            placeholder="Họ và Tên" onfocus="this.placeholder = ''"
-                                            onblur="this.placeholder = 'Nhập Họ và Tên'">
-                                    </div>
-                                    <div class="form-group col-lg-6 col-md-6 email">
-                                        <label style="display: flex">Số điện thoại</label>
-                                        <input value="{{user.phone}}" type="text" class="form-control" name="phone" id="phone"
-                                            placeholder="Số điện thoại" onfocus="this.placeholder = ''"
-                                            onblur="this.placeholder = 'Nhập sđt'">
-                                    </div>
+                            <form action="/account/{{user._id}}?_method=PUT" method="POST"
+                                enctype="multipart/form-data">
+                                {{!-- <div class="form-group"> --}}
+                                    {{!-- --}}
+                                    {{!-- <div class="form-group col-lg-6 col-md-6 email"> --}}
+                                        {{!-- <label style="display: flex">Số điện thoại</label> --}}
+                                        {{!-- <input value="{{user.phone}}" type="text" class="form-control"
+                                            name="phone" id="phone" --}} {{!-- placeholder="Số điện thoại"
+                                            onfocus="this.placeholder = ''" --}} {{!--
+                                            onblur="this.placeholder = 'Nhập sđt'"> --}}
+                                        {{!-- </div> --}}
+                                    {{!-- </div> --}}
+                                <div class="form-group col-lg-7">
+                                    <label style="display: flex"><b>Name</b></label>
+                                    <input value="{{user.name}}" type="text" class="form-control" name="name" id="name"
+                                        placeholder="Name" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Your Name'">
                                 </div>
-                                <div class="form-group">
-                                    <label style="display: flex">Email</label>
-                                    <input value="{{user.email}}" type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nhập Email'">
+                                <div class="form-group col-lg-4">
+                                    <label style="display: flex"><b>Phone Number</b></label>
+                                    <input value="{{user.phone}}" type="phone" class="form-control" name="phone"
+                                        id="phone" placeholder="Phone Number" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Your Phone Number'">
                                 </div>
-                                <div class="form-group">
-                                    <label style="display: flex">Địa chỉ</label>
-                                    <input value="{{user.address}}" type="text" class="form-control" name="address" id="address"
-                                        placeholder="Địa chỉ" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Nhập Địa chỉ'">
+                                <div class="form-group col-lg-7">
+                                    <label style="display: flex"><b>Email</b></label>
+                                    <input value="{{user.email}}" type="email" class="form-control" name="email"
+                                        id="email" placeholder="Email" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Your Email'">
                                 </div>
-                                <div class="form-group">
-                                    <label style="display: flex">Ngày sinh</label>
+                                <div class="form-group col-lg-4">
+                                    <label style="display: flex"><b>Date of Birth</b></label>
                                     <input value="{{user.dob}}" type="date" class="form-control" name="dob" id="dob"
-                                        placeholder="Ngày sinh" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Nhập ngày sinh'">
+                                        placeholder="Date of Birth" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Your Date of Birth'">
                                 </div>
-                                <div class="form-group">
-                                    <label style="display: flex">Giới tính</label>
-                                    {{!-- <input value="{{user.sex}}" type="text" class="form-control" name="sex" id="sex"
-                                        placeholder="Giới tính" onfocus="this.placeholder = ''"
+                                <div class="form-group col-lg-7">
+                                    <label style="display: flex"><b>Address</b></label>
+                                    <input value="{{user.address}}" type="text" class="form-control" name="address"
+                                        id="address" placeholder="Address" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Your Address'">
+                                </div>
+
+                                <div class="form-group col-lg-4">
+                                    <label style="display: flex"><b>Sex</b></label>
+                                    {{!-- <input value="{{user.sex}}" type="text" class="form-control" name="sex"
+                                        id="sex" placeholder="Giới tính" onfocus="this.placeholder = ''"
                                         onblur="this.placeholder = 'Nhập giới tính'"> --}}
-                                    <select class="form-select" name="sex" aria-label="Default select example">
-                                        {{#if (is_equals user.sex "Nam")}}
-                                        <option selected value="Nam">Nam</option>
-                                        <option value="Nữ">Nữ</option>
-                                        {{else if (is_equals user.sex "Nữ")}}
-                                        <option value="Nam">Nam</option>
-                                        <option selected value="Nữ">Nữ</option>
+                                    <select class="form-select col-lg-12" name="sex" aria-label="Default select example"
+                                        style="padding-bottom:6px;padding-top:6px">
+                                        {{#if (is_equals user.sex "Male")}}
+                                        <option selected value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        {{else if (is_equals user.sex "Female")}}
+                                        <option value="Male">Male</option>
+                                        <option selected value="Female">Female</option>
                                         {{else}}
-                                        <option selected value="">Chọn giới tính</option>
-                                        <option value="Nam">Nam</option>
-                                        <option value="Nữ">Nữ</option>
+                                        <option selected value="">Unknown</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                         {{/if}}
                                     </select>
+
                                 </div>
-                                <input id="image_url" name="avatar" style="display: none;" type="file" accept=".jpg,.jpeg,.png">
-                                <input type="submit" value="Cập nhật" class="button button-postComment button--active"
-                                    id="submit-button">
+                                <input id="image_url" name="avatar" style="display: none;" type="file"
+                                    accept=".jpg,.jpeg,.png">
+                                <input type="submit" value="Update" class="button button-postComment button--active"
+                                    id="submit-button" style="padding-top:10px;padding-bottom:10px;margin-top:10px">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-			<div class="col-lg-4">
-				<div class="blog_right_sidebar">
-					<aside class="single_sidebar_widget author_widget">
-						{{#if user.avatar_url}}
-						<img class="avatar_right" id="avatar" src="{{user.avatar_url}}" alt="">
-						{{else}}
-						<img class="avatar_right" id="avatar" src="/img/male_avatar.svg" alt="">
-						{{/if}}
-						<h4>{{user.username}}</h4>
-						<input class="btn-light" type="button" id="loadFileXml" value="Chọn ảnh"
-							onclick="document.getElementById('image_url').click();" />
-						<div class="social_icon">
-							<a href="#">
-								<i class="fab fa-facebook-f"></i>
-							</a>
-							<a href="#">
-								<i class="fab fa-twitter"></i>
-							</a>
-							<a href="#">
-								<i class="fab fa-github"></i>
-							</a>
-							<a href="#">
-								<i class="fab fa-behance"></i>
-							</a>
-						</div>
-						<div class="br"></div>
-					</aside>
-				</div>
-			</div>
-		</div>
-	</div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget author_widget">
+                        {{#if user.avatar_url}}
+                        <img class="avatar_right" id="avatar" src="{{user.avatar_url}}" alt="" width=200px
+                            style="margin-bottom:10px">
+                        {{else}}
+                        <img class="avatar_right" id="avatar" src="/img/male_avatar.svg" alt="" width=200px
+                            style="margin-bottom:10px">
+                        {{/if}}
+                        <h4>{{user.username}}</h4>
+                        <input class="btn-light" type="button" id="loadFileXml" value="Change Avatar"
+                            onclick="document.getElementById('image_url').click();" style="margin-bottom:10px" />
+                        <div class="social_icon">
+                            <a href="#">
+                                <i class="fab fa-facebook-f" style="font-size:30px;margin-right:5px"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-twitter" style="font-size:30px;margin-right:5px"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-github" style="font-size:30px;margin-right:5px"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-behance" style="font-size:30px;margin-right:5px"></i>
+                            </a>
+                        </div>
+                        <div class="br"></div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+<script src="../js/handleChooseImgOnchange.js"></script>

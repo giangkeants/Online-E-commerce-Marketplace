@@ -24,15 +24,15 @@ exports.get = async (id) => {
  * @param page
  * @returns {Promise<void>}
  */
-exports.paging = async (page) => {
+ exports.paging = async (page) => {
   try {
-    let perPage = 9; // số lượng sản phẩm xuất hiện trên 1 page
+    let perPage = 12; // số lượng sản phẩm xuất hiện trên 1 page
     page = page || 1;
 
     return await model
     .find() // find tất cả các data
     .skip((perPage * page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
-    .limit(perPage);
+    .limit(perPage).lean();
   } catch (err) {
     throw err;
   }
@@ -51,49 +51,3 @@ exports.getAll = async () => {
     throw err;
   }
 };
-
-/**
- * Them san pham moi vao database va tra ve ket qua san pham da them <br>
- * Nho them await vao truoc ham tra ve neu khong ham tra ve Promise
- *
- * @param newProduct
- * @returns {Promise<{product: model}>}
- */
-exports.insert = async (newProduct) => {
-  const product = new model(newProduct);
-  try {
-    return await product.save();
-  } catch (err) {
-    throw err;
-  }
-}
-
-/**
- * Tim san pham bang id, update thong tin san pham ton tai trong database
- *
- * @param id
- * @param updateProduct
- * @returns {Promise<{product: model}>}
- */
-exports.update = async (id, updateProduct) => {
-  try {
-    return await model.findByIdAndUpdate(id, updateProduct,
-        { new: true });
-  } catch (err) {
-    throw err;
-  }
-}
-
-/**
- * Xoa san pham dang co trong database bang id
- *
- * @param id
- * @returns {Promise<{product: model}>}
- */
-exports.delete = async (id) => {
-  try {
-    return await model.findByIdAndDelete(id);
-  } catch (err) {
-    throw err;
-  }
-}

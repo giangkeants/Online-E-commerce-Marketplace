@@ -1,6 +1,6 @@
 const productService = require('./productService');
-const offerService = require('../offer/offerService');
-const discountService = require('../discount/discountService');
+// const offerService = require('../offer/offerService');
+// const discountService = require('../discount/discountService');
 
 /**
  * Lay 1 san pham len bang id
@@ -21,9 +21,41 @@ exports.get = async (req, res) => {
 
 exports.paging = async (req, res) => {
   try {
-    const products = await productService.paging(req.query.page);
-    // res.json(products);
-    res.render('product/views/products', { products });
+
+    const page = parseInt(req.query.page) || 1; // trang thu n
+    const products = await productService.paging(page);
+
+    const results = {};
+    results.curr = page;
+
+    results.first = (page - 1) * 12 + 1;
+    results.last = (page -1) * 12 + products.length;
+    results.length = (await productService.getAll()).length;
+
+    // Paginated
+    const startIdx = (page - 1) * 12;
+    if (products.length >= 12) {
+      results.next = page + 1;
+    }
+    else {
+      results.curr = page;
+      results.next = results.curr + 1;
+      results.prev = results.curr - 1;
+    }
+
+    if (startIdx > 0) {
+      results.prev = page - 1;
+    }
+    else {
+      results.prev = 1;
+      results.curr = 2;
+      results.next = 3;
+    }
+    results.products = products;
+
+
+    res.render('product/views/products', { results });
+    // res.status(200).json(results);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -45,51 +77,3 @@ exports.getAll = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-
-/**
- * Them san pham moi vao database tra ket qua neu thanh cong
- *
- * @param req request
- * @param res response
- * @returns {Promise<void>}
- */
-exports.insert = async (req, res) => {
-  try {
-    const newProduct = await productService.insert(req.body);
-    res.status(201).json(newProduct);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-}
-
-/**
- * Tim va Update san pham da co trong database tra ket qua neu thanh cong
- *
- * @param req request
- * @param res response
- * @returns {Promise<void>}
- */
-exports.update = async (req, res) => {
-  try {
-    const updatedProduct = await productService.update(req.params.id, req.body);
-    res.json(updatedProduct);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-}
-
-/**
- * Tim va xoa san pham trong database
- *
- * @param req request
- * @param res response
- * @returns {Promise<void>}
- */
-exports.delete = async (req, res) => {
-  try {
-    await productService.delete(req.params.id);
-    res.json({message: `Product ${req.params.id} has been deleted`});
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-}

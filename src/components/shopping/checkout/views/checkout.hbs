@@ -1,0 +1,100 @@
+<!-- ================ start banner area ================= -->
+<section class="blog-banner-area" id="category">
+    <div class="container h-100">
+        <div class="blog-banner">
+            <div class="text-center">
+                <h1>Product Checkout</h1>
+                <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================ end banner area ================= -->
+
+
+<!--================Checkout Area =================-->
+<section class="checkout_area section-margin--small">
+    <div class="container">
+        <div class="cupon_area">
+            <div class="check_title">
+                <h2>Have a coupon? <a href="#">Click here to enter your code</a></h2>
+            </div>
+            <input type="text" placeholder="Enter coupon code">
+            <a class="button button-coupon" href="#">Apply Coupon</a>
+        </div>
+        <div class="billing_details">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Chi tiết đơn hàng</h3>
+                    <form class="row contact_form" action="/order" method="POST">
+                        <div class="col-md-12 form-group p_star">
+                            <label>Họ tên</label>
+                            <input required value="{{user.name}}" type="text" class="form-control" name="name"
+                                   id="name" placeholder="Họ và Tên" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = ''">
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <label>Số điện thoại</label>
+                            <input required value="{{user.phone}}" type="text" class="form-control" name="phone"
+                                   id="phone" placeholder="Số điện thoại" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = ''">
+                        </div>
+                        <div required class="col-md-12 form-group p_star">
+                            <label>Email</label>
+                            <input value="{{user.email}}" type="email" class="form-control" name="email"
+                                   id="email" placeholder="Email" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = ''">
+                        </div>
+                        <div required class="col-md-12 form-group p_star">
+                            <label>Phương thức thanh toán</label>
+                            <select class="country_select" name="payment" id="payment">
+                                <option value="COD">COD</option>
+                                <option value="Internet Banking">Internet Banking</option>
+                            </select>
+                        </div>
+                        <div required class="col-md-12 form-group p_star">
+                            <label>Địa chỉ giao hàng</label>
+                            <input value="{{user.address}}" type="text" class="form-control" name="address"
+                                   id="address" placeholder="Địa chỉ giao hàng" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = ''">
+                        </div>
+                        <div class="col-md-12 form-group mb-0">
+                            <div class="creat_account">
+                                <h3>Ghi chú</h3>
+                            </div>
+                            <textarea class="form-control" name="message" id="message" rows="1"
+                                      placeholder="Thêm ghi chú"></textarea>
+                        </div>
+                        <div style="margin-top: 20px" class="col-md-12 form-group text-center">
+                            <button type="submit" class="button button-coupon">Thanh toán</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="order_box">
+                        <h2>Your Order</h2>
+                        <ul class="list">
+                            <li><a href="#"><h4>Product <span>Total</span></h4></a></li>
+                            {{#each checkout.cart.products}}
+                                <li><a href="/products/{{this.id}}">{{this.name}}<span
+                                        class="last"> (x {{this.quantity}})</span> <span
+                                        class="last">{{this.price}}</span></a></li>
+                            {{/each}}
+                        </ul>
+                        <ul class="list list_2">
+                            <li><a href="#">Subtotal <span>$2160.00</span></a></li>
+                            <li><a href="#">Shipping <span>Flat rate: $50.00</span></a></li>
+                            <li><a href="#">Total <span>$2210.00</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Checkout Area =================-->
