@@ -1,7 +1,3 @@
-// let page = document.getElementsByName()
-//
-// $("a[href*='" + location.pathname + "']").addClass("active");
-
 jQuery(document).ready(function () {
     const queryParam = new URLSearchParams(window.location.search);
     const page = parseInt(queryParam.get("page"));

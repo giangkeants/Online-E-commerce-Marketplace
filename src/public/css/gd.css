@@ -1156,6 +1156,8 @@ left:775px;
   margin-top: 50px;
   position: relative;
   overflow: hidden;
+
+
 }
 
 #best-seller .dau::before{
@@ -1171,31 +1173,10 @@ left:775px;
 
 #best-seller .dau:hover::before{
    opacity: 1;
-   left:0;
+    left:0;
    width:0;
 }
 
-#best-seller .b1::after{
-    position: absolute;
-	content: '';
-	width:100px;
-  height: 100px;
-  left: 0;
-  top:0;
-  background-size: cover;
-    background: url(../images/79-794437_sale-sticker-png-sale-png-removebg-preview.png) center;
-}
-
-#best-seller .b3::after{
-    position: absolute;
-	content: '';
-	width:100px;
-  height: 100px;
-  left: 0;
-  top:0;
-  background-size: cover;
-    background: url(../images/79-794437_sale-sticker-png-sale-png-removebg-preview.png) center;
-}
 
 #best-seller .dau2{
   position: relative;
