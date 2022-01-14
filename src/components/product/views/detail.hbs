@@ -30,9 +30,14 @@
 			</div>
 			<div class="col-lg-5 offset-lg-1">
 				<div class="s_product_text">
+				<style>
+				e{font-weight: normal}
+				</style>
 					<h1>{{product.name}}</h1>
-					<h2>Price: {{product.price}}₫</h2>
-					<h2>Category: {{product.category}}</h2>
+					<h2 style="width: 10000px">Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <e>{{product.author}}</e></h2>
+					<h2 style="margin-top:-10px">Category: &nbsp;&nbsp;&nbsp;<e>{{product.category}}</e></h2>
+					<h2 style="margin-top:-10px">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<e>{{product.price}}₫</e></h2>
+
 					<div class="product_count">
 						<label for="qty">Quantity:</label>
 
@@ -76,168 +81,13 @@
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-				<p>{{product.description}}</p>
+			<h4>Author</h4>
+				<p style="max-width:800px; margin-top:-20px">{{product.author}}</p>
+			<h4>Category</h4>
+				<p style="max-width:800px; margin-top:-20px">{{product.category}}</p>
+			<h4>Description</h4>
+				<p style="max-width:800px; margin-top:-20px">{{product.description}}</p>
 			</div>
-			{{!-- <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-				<div class="table-responsive">
-					<table class="table">
-						<tbody>
-							<tr>
-								<td>
-									<h5>CPU</h5>
-								</td>
-								<td>
-									<h5>{{product.CPU}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>RAM</h5>
-								</td>
-								<td>
-									<h5>{{product.RAM}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Ổ cứng</h5>
-								</td>
-								<td>
-									<h5>{{product.disk}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Card đồ họa</h5>
-								</td>
-								<td>
-									<h5>{{product.graphic_card}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Màn hình</h5>
-								</td>
-								<td>
-									<h5>{{product.screen}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Cổng giao tiếp</h5>
-								</td>
-								<td>
-									<h5>{{product.port}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Ổ quang</h5>
-								</td>
-								<td>
-									<h5>{{product.optical_disk}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Audio</h5>
-								</td>
-								<td>
-									<h5>{{product.audio}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Bàn phím</h5>
-								</td>
-								<td>
-									<h5>{{product.keyboard}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Đọc thẻ nhớ</h5>
-								</td>
-								<td>
-									<h5>{{product.read_mem_card}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Chuẩn LAN</h5>
-								</td>
-								<td>
-									<h5>{{product.LAN}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Chuẩn WIFI</h5>
-								</td>
-								<td>
-									<h5>{{product.WIFI}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Bluetooth</h5>
-								</td>
-								<td>
-									<h5>{{product.bluetooth}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Webcam</h5>
-								</td>
-								<td>
-									<h5>{{product.webcam}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Hệ điều hành</h5>
-								</td>
-								<td>
-									<h5>{{product.os}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Pin</h5>
-								</td>
-								<td>
-									<h5>{{product.pin}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Trọng lượng</h5>
-								</td>
-								<td>
-									<h5>{{product.weight}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Màu sắc</h5>
-								</td>
-								<td>
-									<h5>{{product.color}}</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5>Kích thước</h5>
-								</td>
-								<td>
-									<h5>{{product.size}}</h5>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div> --}}
 			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 				<div class="row">
 					<div class="col-lg-6">
