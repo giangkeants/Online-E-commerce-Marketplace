@@ -33,8 +33,8 @@
 				<style>
 				e{font-weight: normal}
 				</style>
-					<h1>{{product.name}}</h1>
-					<h2 style="width: 10000px">Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <e>{{product.author}}</e></h2>
+					<h1 style="width: 900px">{{product.name}}</h1>
+					<h2 style="width: 700px">Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <e>{{product.author}}</e></h2>
 					<h2 style="margin-top:-10px">Category: &nbsp;&nbsp;&nbsp;<e>{{product.category}}</e></h2>
 					<h2 style="margin-top:-10px">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<e>{{product.price}}₫</e></h2>
 
@@ -92,23 +92,40 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="comment_list">
+                            {{#each results.comments}}
 							<div class="review_item">
 								<div class="media">
-									<div class="d-flex">
-										<img src="img/product/review-1.png" alt="">
-									</div>
+									{{#if this.user_avatar_url}}
+                                      <img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%" class="avatar" src="{{this.user_avatar_url}}" alt="">
+                                    {{else}}
+                                      <img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"class="avatar" src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png" alt="">
+                                    {{/if}}
 									<div class="media-body">
-										<h4>Blake Ruiz</h4>
-										<h5>12th Feb, 2018 at 05:56 pm</h5>
-										<a class="reply_btn" href="#">Reply</a>
+										<h4>{{this.user_name}}</h4>
+										<h5>{{this.createdAt}}</h5>
 									</div>
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-									incididunt ut labore et
-									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea
-									commodo</p>
+								<p>{{this.content}}</p>
 							</div>
+							{{/each}}
+							{{#if results.comments}}
+                                          <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center">
+                                              <li class="page-item" value="{{results.prev}}"><a id="prev-page-item"
+                                                                                                class="page-link"
+                                              >{{results.prev}}</a></li>
+
+                                              <li class="page-item" value="{{results.curr}}"><a id="curr-page-item"
+                                                                                                class="page-link"
+
+                                              >{{results.curr}}</a></li>
+
+                                              <li class="page-item" value="{{results.next}}"><a id="next-page-item"
+                                                                                                class="page-link"
+                                              >{{results.next}}</a></li>
+                                            </ul>
+                                          </nav>
+                                        {{/if}}
 {{!-- 							<div class="review_item reply"> --}}
 {{!-- 								<div class="media"> --}}
 {{!-- 									<div class="d-flex"> --}}
