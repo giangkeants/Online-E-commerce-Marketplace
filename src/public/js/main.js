@@ -136,5 +136,3 @@ $("#contactForm input[type=submit]").on("click", function (event) {
       window.location.href = `/login?page=/products/${$('#product_id').val()}`;
   });
 });
-
-

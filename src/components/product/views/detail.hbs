@@ -1,23 +1,21 @@
-
-
-    <div style='background-image: none;' class=kt-page-heading>
-        <div class=container>
-            <div class=wapper style=height:200px>
-                <div class=inner>
-                    <nav class=woocommerce-breadcrumb>
-                    <span class=trail-begin>
-                        <a href="/" title="Book Market">Home</a>
-                        <a href="/products" title="Products">Shop</a>
-                    </span>
-                        <span class="sep navigation-pipe"> </span>
-                    <span class=trail-end>Detail
-                    </span>
-                    </nav>
-                    <h1 class="page-title">Product detail</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+<div style='background-image: none;' class=kt-page-heading>
+	<div class=container>
+		<div class=wapper style=height:200px>
+			<div class=inner>
+				<nav class=woocommerce-breadcrumb>
+					<span class=trail-begin>
+						<a href="/" title="Book Market">Home</a>
+						<a href="/products" title="Products">Shop</a>
+					</span>
+					<span class="sep navigation-pipe"> </span>
+					<span class=trail-end>Detail
+					</span>
+				</nav>
+				<h1 class="page-title">Product detail</h1>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!--================Single Product Area =================-->
 <div class="product_image_area">
@@ -32,22 +30,34 @@
 			</div>
 			<div class="col-lg-5 offset-lg-1">
 				<div class="s_product_text">
-				<style>
-				eeeeee {font-weight: normal}
-				</style>
+					<style>
+						eeeeee {
+							font-weight: normal
+						}
+					</style>
 					<h1 style="width: 900px">{{product.name}}</h1>
-					<h2 style="width: 700px">Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <eeeeee>{{product.author}}</eeeeee></h2>
-					<h2 style="margin-top:-10px">Category: &nbsp;&nbsp;&nbsp;<eeeeee>{{product.category}}</eeeeee></h2>
-					<h2 style="margin-top:-10px">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<eeeeee>{{product.price}}₫</eeeeee></h2>
+					<h2 style="width: 700px">Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <eeeeee>
+							{{product.author}}</eeeeee>
+					</h2>
+					<h2 style="margin-top:-10px">Category: &nbsp;&nbsp;&nbsp;<eeeeee>{{product.category}}</eeeeee>
+					</h2>
+					<h2 style="margin-top:-10px">
+						Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<eeeeee>
+							{{product.price}}₫</eeeeee>
+					</h2>
 
 					<div class="product_count">
+						<form id="add-to-card" action="/api/cart/{{product._id}}" method="POST" target="temp">
 						<label for="qty">Quantity:</label>
 
-						<input type="number" name="qty" id="sst" value="1" title="Quantity:"
-							class="input-text qty" style="width: 178px">
+						<input type="hidden" value="{{product._id}}" id="product_id" name="productId">
+						<input type="number" name="qty" id="sst" value="1" title="Quantity:" class="input-text qty"
+							style="width: 178px">
 
-						<a class="button primary-btn" href="/account/cart/:id" style="margin-top: 20px;">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD TO CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+						<a class="button primary-btn" style="margin-top: 20px;">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD TO
+							CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+						</form>
 					</div>
 					<div class="card_area d-flex align-items-center">
 						<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
@@ -83,25 +93,29 @@
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-			<h4>Author</h4>
+				<h4>Author</h4>
 				<p style="max-width:800px; margin-top:-20px">{{product.author}}</p>
-			<h4>Category</h4>
+				<h4>Category</h4>
 				<p style="max-width:800px; margin-top:-20px">{{product.category}}</p>
-			<h4>Description</h4>
+				<h4>Description</h4>
 				<p style="max-width:800px; margin-top:-20px">{{product.description}}</p>
 			</div>
 			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="comment_list">
-                            {{#each results.comments}}
+							{{#each results.comments}}
 							<div class="review_item">
 								<div class="media">
 									{{#if this.user_avatar_url}}
-                                      <img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%" class="avatar" src="{{this.user_avatar_url}}" alt="">
-                                    {{else}}
-                                      <img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"class="avatar" src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png" alt="">
-                                    {{/if}}
+									<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
+										class="avatar" src="{{this.user_avatar_url}}" alt="">
+									{{else}}
+									<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
+										class="avatar"
+										src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png"
+										alt="">
+									{{/if}}
 									<div class="media-body">
 										<h4>{{this.user_name}}</h4>
 										<h5>{{this.createdAt}}</h5>
@@ -111,84 +125,84 @@
 							</div>
 							{{/each}}
 							{{#if results.comments}}
-                                          <nav aria-label="Page navigation example">
-                                            <ul class="pagination justify-content-center">
-                                              <li class="page-item" value="{{results.prev}}"><a id="prev-page-item"
-                                                                                                class="page-link"
-                                              >{{results.prev}}</a></li>
+							<nav aria-label="Page navigation example">
+								<ul class="pagination justify-content-center">
+									<li class="page-item" value="{{results.prev}}"><a id="prev-page-item"
+											class="page-link">{{results.prev}}</a></li>
 
-                                              <li class="page-item" value="{{results.curr}}"><a id="curr-page-item"
-                                                                                                class="page-link"
+									<li class="page-item" value="{{results.curr}}"><a id="curr-page-item"
+											class="page-link">{{results.curr}}</a></li>
 
-                                              >{{results.curr}}</a></li>
-
-                                              <li class="page-item" value="{{results.next}}"><a id="next-page-item"
-                                                                                                class="page-link"
-                                              >{{results.next}}</a></li>
-                                            </ul>
-                                          </nav>
-                                        {{/if}}
-{{!-- 							<div class="review_item reply"> --}}
-{{!-- 								<div class="media"> --}}
-{{!-- 									<div class="d-flex"> --}}
-{{!-- 										<img src="img/product/review-2.png" alt=""> --}}
-{{!-- 									</div> --}}
-{{!-- 									<div class="media-body"> --}}
-{{!-- 										<h4>Blake Ruiz</h4> --}}
-{{!-- 										<h5>12th Feb, 2018 at 05:56 pm</h5> --}}
-{{!-- 										<a class="reply_btn" href="#">Reply</a> --}}
-{{!-- 									</div> --}}
-{{!-- 								</div> --}}
-{{!-- 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor --}}
-{{!-- 									incididunt ut labore et --}}
-{{!-- 									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco --}}
-{{!-- 									laboris nisi ut aliquip ex ea --}}
-{{!-- 									commodo</p> --}}
-{{!-- 							</div> --}}
-{{!-- 							<div class="review_item"> --}}
-{{!-- 								<div class="media"> --}}
-{{!-- 									<div class="d-flex"> --}}
-{{!-- 										<img src="img/product/review-3.png" alt=""> --}}
-{{!-- 									</div> --}}
-{{!-- 									<div class="media-body"> --}}
-{{!-- 										<h4>Blake Ruiz</h4> --}}
-{{!-- 										<h5>12th Feb, 2018 at 05:56 pm</h5> --}}
-{{!-- 										<a class="reply_btn" href="#">Reply</a> --}}
-{{!-- 									</div> --}}
-{{!-- 								</div> --}}
-{{!-- 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor --}}
-{{!-- 									incididunt ut labore et --}}
-{{!-- 									dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco --}}
-{{!-- 									laboris nisi ut aliquip ex ea --}}
-{{!-- 									commodo</p> --}}
-{{!-- 							</div> --}}
+									<li class="page-item" value="{{results.next}}"><a id="next-page-item"
+											class="page-link">{{results.next}}</a></li>
+								</ul>
+							</nav>
+							{{/if}}
+							{{!-- <div class="review_item reply"> --}}
+								{{!-- <div class="media"> --}}
+									{{!-- <div class="d-flex"> --}}
+										{{!-- <img src="img/product/review-2.png" alt=""> --}}
+										{{!-- </div> --}}
+									{{!-- <div class="media-body"> --}}
+										{{!-- <h4>Blake Ruiz</h4> --}}
+										{{!-- <h5>12th Feb, 2018 at 05:56 pm</h5> --}}
+										{{!-- <a class="reply_btn" href="#">Reply</a> --}}
+										{{!-- </div> --}}
+									{{!-- </div> --}}
+								{{!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									--}}
+									{{!-- incididunt ut labore et --}}
+									{{!-- dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco --}}
+									{{!-- laboris nisi ut aliquip ex ea --}}
+									{{!-- commodo</p> --}}
+								{{!-- </div> --}}
+							{{!-- <div class="review_item"> --}}
+								{{!-- <div class="media"> --}}
+									{{!-- <div class="d-flex"> --}}
+										{{!-- <img src="img/product/review-3.png" alt=""> --}}
+										{{!-- </div> --}}
+									{{!-- <div class="media-body"> --}}
+										{{!-- <h4>Blake Ruiz</h4> --}}
+										{{!-- <h5>12th Feb, 2018 at 05:56 pm</h5> --}}
+										{{!-- <a class="reply_btn" href="#">Reply</a> --}}
+										{{!-- </div> --}}
+									{{!-- </div> --}}
+								{{!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									--}}
+									{{!-- incididunt ut labore et --}}
+									{{!-- dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco --}}
+									{{!-- laboris nisi ut aliquip ex ea --}}
+									{{!-- commodo</p> --}}
+								{{!-- </div> --}}
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<div class="review_box">
 							<h4>Post a comment</h4>
 
-{{!-- 								<div class="col-md-12"> --}}
-{{!-- 									<div class="form-group"> --}}
-{{!-- 										<input type="text" class="form-control" id="name" name="name" --}}
-{{!-- 											placeholder="Your Full name"> --}}
-{{!-- 									</div> --}}
-{{!-- 								</div> --}}
-{{!-- 								<div class="col-md-12"> --}}
-{{!-- 									<div class="form-group"> --}}
-{{!-- 										<input type="email" class="form-control" id="email" name="email" --}}
-{{!-- 											placeholder="Email Address"> --}}
-{{!-- 									</div> --}}
-{{!-- 								</div> --}}
-{{!-- 								<div class="col-md-12"> --}}
-{{!-- 									<div class="form-group"> --}}
-{{!-- 										<input type="text" class="form-control" id="number" name="number" --}}
-{{!-- 											placeholder="Phone Number"> --}}
-{{!-- 									</div> --}}
-{{!-- 								</div> --}}
-                            <form class="row contact_form" action="contact_process.php" method="post" id="contactForm"
+							{{!-- <div class="col-md-12"> --}}
+								{{!-- <div class="form-group"> --}}
+									{{!-- <input type="text" class="form-control" id="name" name="name" --}} {{!--
+										placeholder="Your Full name"> --}}
+									{{!-- </div> --}}
+								{{!-- </div> --}}
+							{{!-- <div class="col-md-12"> --}}
+								{{!-- <div class="form-group"> --}}
+									{{!-- <input type="email" class="form-control" id="email" name="email" --}} {{!--
+										placeholder="Email Address"> --}}
+									{{!-- </div> --}}
+								{{!-- </div> --}}
+							{{!-- <div class="col-md-12"> --}}
+								{{!-- <div class="form-group"> --}}
+									{{!-- <input type="text" class="form-control" id="number" name="number" --}} {{!--
+										placeholder="Phone Number"> --}}
+									{{!-- </div> --}}
+								{{!-- </div> --}}
+							<form class="row contact_form" action="contact_process.php" method="post" id="contactForm"
 								novalidate="novalidate">
-                                <input type="hidden" value="{{product._id}}" id="product_id" name="productId">
+								<input type="hidden" value="{{product._id}}" id="product_id" name="productId">
 
 								<div class="col-md-12">
 									<div class="form-group">
@@ -197,7 +211,8 @@
 									</div>
 								</div>
 								<div class="col-md-12 text-right">
-									<button type="submit" value="submit" class="btn primary-btn" id="submit-button">Submit Now</button>
+									<button type="submit" value="submit" class="btn primary-btn"
+										id="submit-button">Submit Now</button>
 								</div>
 							</form>
 						</div>
@@ -344,3 +359,5 @@
 
 
 <!--================End Product Description Area =================-->
+
+<script src="/js/ajaxHandler.js"></script>
