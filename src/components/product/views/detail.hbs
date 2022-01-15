@@ -48,15 +48,16 @@
 
 					<div class="product_count">
 						<form id="add-to-card" action="/api/cart/{{product._id}}" method="POST" target="temp">
-						<label for="qty">Quantity:</label>
+							<label for="qty">Quantity:</label>
 
-						<input type="hidden" value="{{product._id}}" id="product_id" name="productId">
-						<input type="number" name="qty" id="sst" value="1" title="Quantity:" class="input-text qty"
-							style="width: 178px">
+							<input type="hidden" value="{{product._id}}" id="product_id" name="productId">
+							<input type="number" name="qty" id="qty" value="1" title="Quantity:" class="input-text qty"
+								style="width: 178px">
 
-						<a class="button primary-btn" style="margin-top: 20px;">
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD TO
-							CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<a class="button primary-btn" onclick="document.getElementById('add-to-card').submit()"
+							 	style="margin-top: 20px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD TO
+								CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 						</form>
 					</div>
 					<div class="card_area d-flex align-items-center">
