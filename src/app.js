@@ -21,6 +21,8 @@ const authRouter = require('./components/auth/authRouter');
 const loggedInUserGuard = require('./middlewares/loggedInUserGuard');
 const accountRouter = require('./components/account/accountRouter');
 const uploadRouter = require('./components/upload/uploadRouter')
+const cartRouter = require('./components/shopping/cart/cartRouter');
+const apiRouter = require('./api/apiRouter');
 
 // try to connect to database
 const db = require('./config/database');
@@ -60,6 +62,8 @@ app.use('/products', productRouter);
 app.use('/upload', loggedInUserGuard, uploadRouter);
 app.use('/confirmation', loggedInUserGuard, confirmationRouter);
 app.use('/users', usersRouter);
+app.use('/cart', cartRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
