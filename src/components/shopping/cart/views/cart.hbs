@@ -5,93 +5,95 @@
       <div class="table-responsive">
         <table class="table">
           <thead>
-          <tr>
-            <th scope="col">Product</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Total</th>
-            <th scope="col">Delete</th>
-          </tr>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+              <th scope="col">Delete</th>
+            </tr>
           </thead>
           <tbody>
-          {{#if cart}}
+            {{#if cart}}
             {{#each cart.products}}
-              <tr>
-                <td>
-                  <div class="media">
-                    <div class="d-flex">
-                      <a href="products/{{this.id}}"> <img style="width: 7rem" src={{this.image_url}} alt=""></a>
-                    </div>
-                    <div class="media-body">
-                      <p>{{this.name}}</p>
-                    </div>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="d-flex">
+                    <a href="products/{{this.id}}"> <img style="width: 7rem" src={{this.image_url}} alt=""></a>
                   </div>
-                </td>
-                <td>
-                  <h5>{{this.price}}</h5>
-                </td>
-                <td>
-                  <h5>x {{this.quantity}}</h5>
-                </td>
-                <td>
-                  <h5><script>
-                    var total = {{this.price}} * {{this.quantity}}
+                  <div class="media-body">
+                    <p>{{this.name}}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <h5>{{this.price}}</h5>
+              </td>
+              <td>
+                <h5>x {{this.quantity}}</h5>
+              </td>
+              <td>
+                <h5>
+                  <script>
+                    var total = {{ this.price }} * {{ this.quantity }}
                     document.write(total);
-                  </script></h5>
-                </td>
-                <td>
-                  <form id="delete-product" action="/cart/{{this.id}}" method="POST" enctype="multipart/form-data">
-                    <button type="submit" ><i class="bi bi-trash-fill"></i></button>
-                  </form>
-                </td>
-              </tr>
-            {{/each}}
-          {{/if}}
-          <tr class="bottom_button">
-            <td>
-              <form id="delete-all-product" action="/cart" method="POST" enctype="multipart/form-data">
-                <a onclick="document.getElementById('delete-all-product').submit()" class="button" >Xóa tất cả</a>
-              </form>
-            </td>
-            <td>
-
-            </td>
-            <td>
-              <h5>Subtotal</h5>
-            </td>
-            <td>
-              {{#if cart}}
-                <h5>{{cart.cost_total}}</h5>
-              {{else}}
-                <h5>0</h5>
-              {{/if}}
-            </td>
-            <td>
-
-            </td>
-          </tr>
-          <tr class="out_button_area">
-            <td class="d-none-l">
-
-            </td>
-            <td class="d-none-l">
-
-            </td>
-            <td class="">
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-              <div class="checkout_btn_inner d-flex align-items-center">
-                <a class="gray_btn" href="/products">Tiếp tục mua hàng</a>
-                <form action="/checkout" method="POST" enctype="multipart/form-data">
-                  <button type="submit" class="primary-btn ml-2" >Thanh toán </button>
+                  </script>
+                </h5>
+              </td>
+              <td>
+                <form id="delete-product" action="/cart/{{this.id}}" method="POST" enctype="multipart/form-data">
+                  <button type="submit"><i class="bi bi-trash-fill"></i></button>
                 </form>
-              </div>
-            </td>
-          </tr>
+              </td>
+            </tr>
+            {{/each}}
+            {{/if}}
+            <tr class="bottom_button">
+              <td>
+                <form id="delete-all-product" action="/cart" method="POST" enctype="multipart/form-data">
+                  <a onclick="document.getElementById('delete-all-product').submit()" class="button">Xóa tất cả</a>
+                </form>
+              </td>
+              <td>
+
+              </td>
+              <td>
+                <h5>Subtotal</h5>
+              </td>
+              <td>
+                {{#if cart}}
+                <h5>{{cart.cost_total}}</h5>
+                {{else}}
+                <h5>0</h5>
+                {{/if}}
+              </td>
+              <td>
+
+              </td>
+            </tr>
+            <tr class="out_button_area">
+              <td class="d-none-l">
+
+              </td>
+              <td class="d-none-l">
+
+              </td>
+              <td class="">
+
+              </td>
+              <td>
+
+              </td>
+              <td>
+                <div class="checkout_btn_inner d-flex align-items-center">
+                  <a class="gray_btn" href="/products">Tiếp tục mua hàng</a>
+                  <form action="/checkout" method="POST" enctype="multipart/form-data">
+                    <button type="submit" class="primary-btn ml-2">Thanh toán </button>
+                  </form>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -133,10 +133,12 @@
                     <aside class="single_sidebar_widget author_widget">
                         {{#if user.avatar_url}}
                         <img class="avatar_right" id="avatar" src="{{user.avatar_url}}" alt=""
-                        style="object-fit: cover; width: 200px; height: 200px; margin-bottom:10px; border-radius: 50%">
+                            style="object-fit: cover; width: 200px; height: 200px; margin-bottom:10px; border-radius: 50%">
                         {{else}}
-                        <img class="avatar_right" id="avatar" src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png" alt=""
-                        style="object-fit: cover; width: 200px; height: 200px; margin-bottom:10px; border-radius: 50%">
+                        <img class="avatar_right" id="avatar"
+                            src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png"
+                            alt=""
+                            style="object-fit: cover; width: 200px; height: 200px; margin-bottom:10px; border-radius: 50%">
                         {{/if}}
                         <h4>{{user.username}}</h4>
                         <input class="btn-light" type="button" id="loadFileXml" value="Change Avatar"

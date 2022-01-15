@@ -34,21 +34,19 @@
                     <form class="row contact_form" action="/order" method="POST">
                         <div class="col-md-12 form-group p_star">
                             <label>Họ tên</label>
-                            <input required value="{{user.name}}" type="text" class="form-control" name="name"
-                                   id="name" placeholder="Họ và Tên" onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = ''">
+                            <input required value="{{user.name}}" type="text" class="form-control" name="name" id="name"
+                                placeholder="Họ và Tên" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
                         </div>
                         <div class="col-md-12 form-group p_star">
                             <label>Số điện thoại</label>
                             <input required value="{{user.phone}}" type="text" class="form-control" name="phone"
-                                   id="phone" placeholder="Số điện thoại" onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = ''">
+                                id="phone" placeholder="Số điện thoại" onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = ''">
                         </div>
                         <div required class="col-md-12 form-group p_star">
                             <label>Email</label>
-                            <input value="{{user.email}}" type="email" class="form-control" name="email"
-                                   id="email" placeholder="Email" onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = ''">
+                            <input value="{{user.email}}" type="email" class="form-control" name="email" id="email"
+                                placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
                         </div>
                         <div required class="col-md-12 form-group p_star">
                             <label>Phương thức thanh toán</label>
@@ -59,16 +57,16 @@
                         </div>
                         <div required class="col-md-12 form-group p_star">
                             <label>Địa chỉ giao hàng</label>
-                            <input value="{{user.address}}" type="text" class="form-control" name="address"
-                                   id="address" placeholder="Địa chỉ giao hàng" onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = ''">
+                            <input value="{{user.address}}" type="text" class="form-control" name="address" id="address"
+                                placeholder="Địa chỉ giao hàng" onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = ''">
                         </div>
                         <div class="col-md-12 form-group mb-0">
                             <div class="creat_account">
                                 <h3>Ghi chú</h3>
                             </div>
                             <textarea class="form-control" name="message" id="message" rows="1"
-                                      placeholder="Thêm ghi chú"></textarea>
+                                placeholder="Thêm ghi chú"></textarea>
                         </div>
                         <div style="margin-top: 20px" class="col-md-12 form-group text-center">
                             <button type="submit" class="button button-coupon">Thanh toán</button>
@@ -79,11 +77,12 @@
                     <div class="order_box">
                         <h2>Your Order</h2>
                         <ul class="list">
-                            <li><a href="#"><h4>Product <span>Total</span></h4></a></li>
+                            <li><a href="#">
+                                    <h4>Product <span>Total</span></h4>
+                                </a></li>
                             {{#each checkout.cart.products}}
-                                <li><a href="/products/{{this.id}}">{{this.name}}<span
-                                        class="last"> (x {{this.quantity}})</span> <span
-                                        class="last">{{this.price}}</span></a></li>
+                            <li><a href="/products/{{this.id}}">{{this.name}}<span class="last"> (x
+                                        {{this.quantity}})</span> <span class="last">{{this.price}}</span></a></li>
                             {{/each}}
                         </ul>
                         <ul class="list list_2">
