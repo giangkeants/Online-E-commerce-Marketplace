@@ -115,7 +115,7 @@ $(function() {
   
 });
 
-$("#contactForm button[type=submit]").on("click", function (event) {
+$("#contactForm button[type=submit-comment]").on("click", function (event) {
   event.preventDefault();
   $.post(
       `/api/products/${$("#product_id").val()}/comments`,
