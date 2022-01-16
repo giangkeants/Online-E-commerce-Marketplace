@@ -34,9 +34,11 @@ exports.getCart = async function (req, res) {
           } else {
             req.session.guest_id = req.user._id;
           }
+
         }
       }
     }
+
     res.render('shopping/cart/views/cart', {cart});
   } catch (err) {
     res.status(500).json({ message: err.message });

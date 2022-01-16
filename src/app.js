@@ -27,6 +27,7 @@ const apiRouter = require('./api/apiRouter');
 
 const loggedInUserGuard = require('./middlewares/loggedInUserGuard');
 const userIdMiddleware = require('./middlewares/userIdMiddleware');
+const cartSizeMiddleware = require('./middlewares/cartSizeMiddleware');
 
 // try to connect to database
 const db = require('./config/database');
@@ -58,6 +59,7 @@ app.use(function(req, res, next) {
 })
 
 app.use(userIdMiddleware);
+app.use(cartSizeMiddleware);
 
 // Router middleware
 app.use('/', indexRouter);

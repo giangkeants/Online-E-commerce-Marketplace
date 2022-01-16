@@ -190,18 +190,20 @@ exports.addProductToCart = async function (product, cart, qty) {
 
 /**
  * lấy số lượng giỏ hàng
- * @param cart
+ * @param user_id
  * @returns {Promise<Document<any, any, unknown> & Require_id<unknown>>}
  */
-exports.getCartSize = async function (cart) {
+exports.getCartSize = async function (user_id) {
   try {
-    return await cartModel.aggregate([
-      {
-        $project: {
-          cartSize: { $size: "$products" },
-        },
-      },
-    ]);
+    const cart = await cartModel
+        .findOne({
+          user_id: ObjectId.createFromHexString(user_id),
+        })
+        .lean();
+    if(cart === null)
+      return 0;
+    else
+      return cart.products.length;
   } catch (err) {
     throw err;
   }
