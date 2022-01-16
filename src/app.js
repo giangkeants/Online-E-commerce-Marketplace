@@ -1,28 +1,32 @@
 require('dotenv').config();
 require('./hbsHelper/helper');
 
-const createError = require('http-errors');
 const express = require('express');
+
 const path = require('path');
+const passport = require("./config/passport");  
+const flash = require('connect-flash');
+
+
+const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
-const passport = require("./config/passport");
 const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/gd');
-
 const infoRouter = require('./routes/about_us');
-
 const usersRouter = require('./routes/users');
 const confirmationRouter = require('./routes/confirmation');
 const productRouter = require('./components/product/productRouter');
 const authRouter = require('./components/auth/authRouter');
-const loggedInUserGuard = require('./middlewares/loggedInUserGuard');
 const accountRouter = require('./components/account/accountRouter');
 const uploadRouter = require('./components/upload/uploadRouter')
 const cartRouter = require('./components/shopping/cart/cartRouter');
 const apiRouter = require('./api/apiRouter');
+
+const loggedInUserGuard = require('./middlewares/loggedInUserGuard');
+const userIdMiddleware = require('./middlewares/userIdMiddleware');
 
 // try to connect to database
 const db = require('./config/database');
@@ -46,11 +50,14 @@ app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
 app.use(session({ secret: process.env.SESSION_SECRET_KEY }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.use(function(req, res, next) {
     res.locals.user = req.user;
     next()
 })
+
+app.use(userIdMiddleware);
 
 // Router middleware
 app.use('/', indexRouter);

@@ -9,7 +9,7 @@ const cloudinary = require('../../config/cloudinary');
  */
 module.exports.getById = async (id) => {
   try {
-    const account = await model.findById(id);
+    const account = await model.findById(id).lean();
     if (account === null) {
       return { mess: `Account id '${id}' not found` };
     }
@@ -26,7 +26,7 @@ module.exports.getById = async (id) => {
  */
 module.exports.getByUsername = async (username) => {
   try {
-    return await model.findOne({username});
+    return await model.findOne({username}).lean();
   } catch (err) {
     throw err;
   }

@@ -3,11 +3,11 @@
 	<div class="container h-100">
 		<div class="blog-banner">
 			<div class="text-center">
-				<h1>Đăng nhập</h1>
+				<h1>Login</h1>
 				<nav aria-label="breadcrumb" class="banner-breadcrumb">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
+						<li class="breadcrumb-item active" aria-current="page">Login</li>
 					</ol>
 				</nav>
 			</div>
@@ -23,15 +23,15 @@
 			<div class="col-lg-6">
 				<div class="login_box_img">
 					<div class="hover">
-						<h4>Bạn chưa có tài khoản?</h4>
-						<p>Hãy tạo tài khoản để đăng nhập</p>
-						<a class="button button-account" href="/register">Tạo tài khoản</a>
+						<h4>You do not have account?</h4>
+						<p>Create account!</p>
+						<a class="button button-account" href="/register">Register</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="login_form_inner">
-					<h3>Đăng nhập để mua hàng</h3>
+					<h3>Login for shopping</h3>
 					<form class="row login_form" action="/login" id="contactForm" method="POST">
 						<div class="col-md-12 form-group">
 							<input type="text" required class="form-control" id="name" name="username"
@@ -42,19 +42,19 @@
 							<input type="password" required class="form-control" id="name" name="password"
 								placeholder="Password" onfocus="this.placeholder = ''"
 								onblur="this.placeholder = 'Password'">
-							{{#if invalidAccount}}
-							Username or Password is incorrect!
+							{{#if message}}
+                                <div style="color: red">{{message}}</div>
 							{{/if}}
 						</div>
 						<div class="col-md-12 form-group">
 							<div class="creat_account">
 								<input type="checkbox" id="f-option2" name="selector">
-								<label for="f-option2">Nhớ mật khẩu</label>
+								<label for="f-option2">Remember password</label>
 							</div>
 						</div>
 						<div class="col-md-12 form-group">
-							<button type="submit" value="submit" class="button button-login w-100">Đăng nhập</button>
-							<a href="#">Quên mật khẩu?</a>
+							<button type="submit" value="submit" class="button button-login w-100">Sign in</button>
+							<a href="#">Forgot password?</a>
 						</div>
 					</form>
 				</div>

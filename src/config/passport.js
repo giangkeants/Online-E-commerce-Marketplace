@@ -16,11 +16,22 @@ passport.use(new LocalStrategy(
 ));
 
 passport.serializeUser(function(user, done) {
-  done(null, user.username);
+  done(null, {
+      _id: user._id,
+      username: user.username,
+      email: user.email,
+      name: user.name,
+      phone: user.phone,
+      address: user.address,
+      sex: user.sex,
+      dob: user.dob,
+      avatar_url: user.avatar_url
+  });
 });
 
-passport.deserializeUser(async function(username, done) {
-  const user = await accountService.getByUsername(username);
+
+passport.deserializeUser(async function(user, done) {
+  //const user = await accountService.getByUsername(username);
   done(null, user);
 });
 

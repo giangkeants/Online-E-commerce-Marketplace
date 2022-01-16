@@ -12,10 +12,9 @@ router.get('/register', authController.renderRegister);
 router.get('/logout', authController.logout);
 
 // POST methods
-router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/login?invalid-account'
-}))
+// Login
+router.post("/login", authController.login);
+//register
 router.post('/register', authController.register);
 
 

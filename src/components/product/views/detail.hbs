@@ -45,7 +45,8 @@
 						Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<eeeeee>
 							{{product.price}}₫</eeeeee>
 					</h2>
-
+					
+          			<iframe name="temp" style="display:none;"></iframe>
 					<div class="product_count">
 						<form id="add-to-card" action="/api/cart/{{product._id}}" method="POST" target="temp">
 							<label for="qty">Quantity:</label>

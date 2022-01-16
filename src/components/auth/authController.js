@@ -16,6 +16,24 @@ exports.logout = (req, res) => {
   res.redirect('/');
 }
 
+exports.login = (req, res, next) => {
+  passport.authenticate("local", function (err, user, info) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      req.flash("failure_message", info);
+      return res.redirect("/login");
+    }
+    req.logIn(user, function (err) {
+      if (err) {
+        return next(err);
+      }
+      return res.redirect("/");
+    });
+  })(req, res, next);
+};
+
 /**
  * Render trang register
  * @param req request
@@ -38,7 +56,7 @@ exports.register = async (req, res) => {
     const { confirmPassword } = req.body;
     if(password != confirmPassword){
       res.render('auth/views/register', {
-        message: 'Xác nhận mật khẩu không đúng'
+        message: 'Password does not match'
       });
     }
     else {
@@ -46,7 +64,7 @@ exports.register = async (req, res) => {
         const newAccount = await accountService.insert(req.body);
         if (!newAccount) {
           res.render('auth/views/register', {
-            message: 'Username hoặc Email đã tồn tại'
+            message: 'Username or Email already exist'
           });
         } else {
           res.redirect('/login');
