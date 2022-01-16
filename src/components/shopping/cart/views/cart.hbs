@@ -6,34 +6,38 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Product</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Total</th>
-              <th scope="col">Delete</th>
+              <th scope="col" width=120>Product Image</th>
+              <th scope="col" width=300>Product Name</th>
+              <th scope="col" width=80>Price</th>
+              <th scope="col" width=80>Quantity</th>
+              <th scope="col" width=80>Total</th>
+              <th scope="col" width=120>Delete</th>
             </tr>
           </thead>
           <tbody>
             {{#if cart}}
             {{#each cart.products}}
             <tr>
-              <td>
+              <td style="vertical-align: middle">
                 <div class="media">
                   <div class="d-flex">
-                    <a href="products/{{this.id}}"> <img style="width: 7rem" src={{this.image_url}} alt=""></a>
+                    <a href="products/{{this.id}}"> <img style="width: 10rem" src={{this.image_url}} alt=""></a>
                   </div>
-                  <div class="media-body">
-                    <p>{{this.name}}</p>
-                  </div>
+{{!--                   <div class="media-body"> --}}
+{{!--                     <p style="margin-top: 10px;margin-bottom: 0px">{{this.name}}</p> --}}
+{{!--                   </div> --}}
                 </div>
               </td>
-              <td>
+              <td style="vertical-align: middle">
+                <h5>{{this.name}}</h5>
+              </td>
+              <td style="vertical-align: middle">
                 <h5>{{this.price}}</h5>
               </td>
-              <td>
+              <td style="vertical-align: middle">
                 <h5>x {{this.quantity}}</h5>
               </td>
-              <td>
+              <td style="vertical-align: middle">
                 <h5>
                   <script>
                     var total = {{ this.price }} * {{ this.quantity }}
@@ -41,9 +45,9 @@
                   </script>
                 </h5>
               </td>
-              <td>
+              <td style="vertical-align: middle; padding-left:75px">
                 <form id="delete-product" action="/cart/{{this.id}}" method="POST" enctype="multipart/form-data">
-                  <button type="submit"><i class="bi bi-trash-fill"></i></button>
+                  <button type="submit"><i class="fa fa-trash"></i></button>
                 </form>
               </td>
             </tr>
@@ -56,9 +60,9 @@
                 </form>
               </td>
               <td>
-
+<td></td>
               </td>
-              <td>
+              <td style="vertical-align: middle;">
                 <h5>Subtotal</h5>
               </td>
               <td>
@@ -83,13 +87,14 @@
 
               </td>
               <td>
-
+              </td>
+              <td>
               </td>
               <td>
                 <div class="checkout_btn_inner d-flex align-items-center">
                   <a class="gray_btn" href="/products">Tiếp tục mua hàng</a>
                   <form action="/checkout" method="POST" enctype="multipart/form-data">
-                    <button type="submit" class="primary-btn ml-2">Thanh toán </button>
+                    <button  style="margin-top:10px;font-size:17px; padding:5px 10px 5px 10px"type="submit" class="primary-btn ml-2">Thanh toán </button>
                   </form>
                 </div>
               </td>
