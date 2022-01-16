@@ -26,7 +26,7 @@ module.exports.getById = async (id) => {
  */
 module.exports.getByUsername = async (username) => {
   try {
-    return await model.findOne({username}).lean();
+    return await model.findOne({username});
   } catch (err) {
     throw err;
   }
