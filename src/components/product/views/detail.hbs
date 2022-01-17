@@ -136,7 +136,7 @@
 							<div class="review_item">
 								<div class="media">
 									{{#if this.user_avatar_url}}
-									<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
+									<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
 										class="avatar" src="{{this.user_avatar_url}}" alt="">
 									{{else}}
 									<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
@@ -152,27 +152,7 @@
 
 							</div>
 							{{/each}}
-							{{#if results.comments}}
-							<nav aria-label="Page navigation example">
-								<ul class="pagination justify-content-center" id="comment-pagination">
-									<li class="page-item" value="{{results.prev}}"><a id="prev-page-item"
-                                                                                      class="page-link"
-                                                                                      href="#"
-                                                                                      onclick="doNothing(event);"
-                                    >{{results.prev}}</a></li>
-                                    <li class="page-item" value="{{results.curr}}"><a id="curr-page-item"
-                                                                                      class="page-link"
-                                                                                      href="#"
-                                                                                      onclick="doNothing(event);"
-                                    >{{results.curr}}</a></li>
-                                    <li class="page-item" value="{{results.next}}"><a id="next-page-item"
-                                                                                      class="page-link"
-                                                                                      href="#"
-                                                                                      onclick="doNothing(event);"
-                                    >{{results.next}}</a></li>
-								</ul>
-							</nav>
-							{{/if}}
+
 							{{!-- <div class="review_item reply"> --}}
 								{{!-- <div class="media"> --}}
 									{{!-- <div class="d-flex"> --}}
@@ -212,6 +192,27 @@
 									{{!-- commodo</p> --}}
 								{{!-- </div> --}}
 						</div>
+						{{#if results.comments}}
+                        <nav aria-label="Page navigation example">
+                        	<ul class="pagination justify-content-center" id="comment-pagination">
+                        		<li class="page-item" value="{{results.prev}}"><a id="prev-page-item"
+                                                                                  class="page-link"
+                                                                                  href="#"
+                                                                                  onclick="doNothing(event);"
+                                >{{results.prev}}</a></li>
+                                <li class="page-item" value="{{results.curr}}"><a id="curr-page-item"
+                                                                                  class="page-link"
+                                                                                  href="#"
+                                                                                  onclick="doNothing(event);"
+                                >{{results.curr}}</a></li>
+                                <li class="page-item" value="{{results.next}}"><a id="next-page-item"
+                                                                                  class="page-link"
+                                                                                  href="#"
+                                                                                  onclick="doNothing(event);"
+                                >{{results.next}}</a></li>
+                        	</ul>
+                        </nav>
+                        {{/if}}
 					</div>
 					<div class="col-lg-6">
 						<div class="review_box" id = "review_box">

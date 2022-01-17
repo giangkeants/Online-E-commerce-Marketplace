@@ -8,7 +8,7 @@ document
             dateType: "JSON",
             success: function (data) {
                 const $comment = $("#comment-list");
-                $comment.empty();
+                // $comment.empty();
 
                 const {comments, prev, next, curr} = data;
                 const prevItem = document.getElementById("prev-page-item");
@@ -22,19 +22,19 @@ document
                 const currItem = document.getElementById("curr-page-item");
                 currItem.innerText = curr;
                 currItem.value = curr;
-
+                $comment.empty();
                 comments.forEach((comment) => {
-                    const str = `<div class="review_item">
-                                    <div class="media">
-                                        {{#if ${comment.user_avatar_url}}}
-                                        <img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
-                                            class="avatar" src="${comment.user_avatar_url}" alt="">
-                                        {{else}}
-                                        <img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
+                    let avatarString;
+                    if(comment.user_avatar_url)
+                        avatarString=`<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
+                                            class="avatar" src="${comment.user_avatar_url}" alt="">`;
+                    else avatarString=`<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
                                             class="avatar"
                                             src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png"
-                                            alt="">
-                                        {{/if}}
+                                            alt="">`;
+                    const str = `<div class="review_item">
+                                    <div class="media">
+                                        ${avatarString}
                                         <div class="media-body">
                                             <h4 style="margin-bottom:5px; padding-top:15px; margin-left:10px">${comment.user_name} <i style="font-size:12px; font-weight:lighter">(${comment.createdAt})</i></h4>
                                             <p style="margin-left: 10px">${comment.content}</p>
