@@ -7,8 +7,8 @@ const accountService = require('../account/accountService');
  * @param res response
  */
 exports.renderLogin = (req, res) => {
-  const invalidAccount = req.query['invalid-account'] !== undefined;
-  res.render('auth/views/login', { invalidAccount });
+  const message = req.flash("failure_message");
+  res.render("auth/views/login", message[0]);
 }
 
 exports.logout = (req, res) => {
