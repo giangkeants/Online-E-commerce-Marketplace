@@ -34,6 +34,10 @@
 						eeeeee {
 							font-weight: normal
 						}
+
+						.swal-wide{
+                              font-size: 1.4rem !important;
+                        }
 					</style>
 					<h1 style="width: 900px">{{product.name}}</h1>
 					<h2 style="width: 700px">Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <eeeeee>
@@ -48,17 +52,35 @@
 					
           			<iframe name="temp" style="display:none;"></iframe>
 					<div class="product_count">
-						<form id="add-to-card" action="/api/cart/{{product._id}}" method="POST" target="temp">
+						<form id="add-to-cart" action="/api/cart/{{product._id}}" method="POST" target="temp">
 							<label for="qty">Quantity:</label>
+
+
 
 							<input type="hidden" value="{{product._id}}" id="product_id" name="productId">
 							<input type="number" name="qty" id="qty" value="1" title="Quantity:" class="input-text qty"
 								style="width: 178px">
 
-							<a href="#" class="button primary-btn" onclick="document.getElementById('add-to-card').submit()"
+							<a href="#" class="button primary-btn" onclick="document.getElementById('add-to-cart').submit() ; notificationOnAdd(event)"
 							 	style="margin-top: 20px;">
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD TO
-								CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								ADD TO CART
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+							<script>
+                            function notificationOnAdd(e) {
+                                Swal.fire({
+                                  title: 'Added to cart!',
+                                  html: 'Check your <a href="/cart">cart</a> for more information.',
+                                  icon: 'success',
+                                  customClass: 'swal-wide'
+                                });
+
+                                e.preventDefault();
+                            }
+                            </script>
+
+
 						</form>
 					</div>
 					<div class="card_area d-flex align-items-center">
