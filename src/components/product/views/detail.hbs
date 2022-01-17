@@ -78,6 +78,10 @@
 
                                 e.preventDefault();
                             }
+
+                            function doNothing(e) {
+                                e.preventDefault();
+                            }
                             </script>
 
 
@@ -153,13 +157,18 @@
 								<ul class="pagination justify-content-center" id="comment-pagination">
 									<li class="page-item" value="{{results.prev}}"><a id="prev-page-item"
                                                                                       class="page-link"
+                                                                                      href="#"
+                                                                                      onclick="doNothing(event);"
                                     >{{results.prev}}</a></li>
                                     <li class="page-item" value="{{results.curr}}"><a id="curr-page-item"
                                                                                       class="page-link"
-
+                                                                                      href="#"
+                                                                                      onclick="doNothing(event);"
                                     >{{results.curr}}</a></li>
                                     <li class="page-item" value="{{results.next}}"><a id="next-page-item"
                                                                                       class="page-link"
+                                                                                      href="#"
+                                                                                      onclick="doNothing(event);"
                                     >{{results.next}}</a></li>
 								</ul>
 							</nav>
