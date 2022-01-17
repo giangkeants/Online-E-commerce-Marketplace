@@ -3,11 +3,39 @@
   <div class="container">
     <div class="cart_inner">
       <div class="table-responsive">
+      <style>
+        .swal-wide{
+              font-size: 1.4rem !important;
+        }
+        </style>
+        <script>
+        function confirmRemove(e) {
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to undo this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, remove all!',
+              customClass: 'swal-wide'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                document.getElementById('delete-all-product').submit()
+              }
+            })
+
+            e.preventDefault();
+
+
+        }
+        </script>
+
         <table class="table">
           <thead>
             <tr>
-              <th scope="col" width=120>Product Image</th>
-              <th scope="col" width=300>Product Name</th>
+              <th scope="col" width=100>Product Image</th>
+              <th scope="col" width=320>Product Name</th>
               <th scope="col" width=80>Price</th>
               <th scope="col" width=80>Quantity</th>
               <th scope="col" width=80>Total</th>
@@ -56,7 +84,9 @@
             <tr class="bottom_button">
               <td>
                 <form id="delete-all-product" action="/cart" method="POST" enctype="multipart/form-data">
-                  <a onclick="document.getElementById('delete-all-product').submit()" class="button">Xóa tất cả</a>
+                  <a onclick="confirmRemove(event)" class="button"
+                  style="margin-right:-28px" href="#"
+                  >REMOVE ALL</a>
                 </form>
               </td>
               <td>
@@ -92,10 +122,11 @@
               </td>
               <td>
                 <div class="checkout_btn_inner d-flex align-items-center">
-                  <a class="gray_btn" href="/products">Tiếp tục mua hàng</a>
-                  <form action="/checkout" method="POST" enctype="multipart/form-data">
-                    <button  style="margin-top:10px;font-size:17px; padding:5px 10px 5px 10px"type="submit" class="primary-btn ml-2">Thanh toán </button>
-                  </form>
+                  <a class="gray_btn" href="/products">Continue shopping</a>
+                  <a href="#" style="color: inherit;
+                                       text-decoration: none;">
+                    <button  style="margin-top:10px;font-size:17px; padding:5px 10px 5px 10px"type="submit" class="primary-btn ml-2">Checkout</button>
+                  </a>
                 </div>
               </td>
             </tr>

@@ -582,7 +582,7 @@
 
                             <div class="padding-0 col-lg-5 col-md-6 hidden-sm hidden-xs">
                                 <div class="header-main-menu clear-both">
-                                    <a href="/"><img
+                                    <a href="/"><img style="padding-left:50px"
                                             src="https://cdn.discordapp.com/attachments/635399217963204615/923536813493194752/logo.png"
                                             class=_rw></a>
                                 </div>
@@ -596,7 +596,7 @@
                                     <div class="mini-cart mazano-mini-cart">
                                         <a class="cart-link" href="/cart">
                                             <span class="icon">
-                                                <span class="count">0</span>
+                                                <span id="top-ti-shopping-cart" class="count">{{cartSize}}</span>
                                             </span>
                                             <span class="text">Bag</span>
                                             <span class="sub-total"><span class="woocs_special_price_code"><span
@@ -609,7 +609,7 @@
                                     </div>
                                     {{!-- <span class="icon-account flaticon-shape"></span> --}}
                                     {{#if user}}
-                                    <a href="/account/{{user.id}}"><span class="icon-account flaticon-shape"><i
+                                    <a href="/account/{{user._id}}"><span class="icon-account flaticon-shape"><i
                                                 style="font-size: 1.5rem">Hello, {{user.username}}</i></span></a>
                                     {{else}}
                                     <a href="/login"><span class="icon-account flaticon-shape"><small
@@ -1046,17 +1046,15 @@
 
 
     <!--================ End footer Area  =================-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
-        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
-
-    <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
-    <script src="/vendors/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="/vendors/skrollr.min.js"></script>
-
-    <script src="/vendors/jquery.ajaxchimp.min.js"></script>
-    <script src="/vendors/mail-script.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+          <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
+                <script src="/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+                <script src="/vendors/skrollr.min.js"></script>
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="/vendors/jquery.ajaxchimp.min.js"></script>
+                <script src="/vendors/mail-script.js"></script>
+                <script src="/js/main.js"></script>
+          </body>
 </body>
 </html>
