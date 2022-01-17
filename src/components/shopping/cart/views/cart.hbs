@@ -3,13 +3,13 @@
   <div class="container">
     <div class="cart_inner">
       <div class="table-responsive">
-      <style>
-        .swal-wide{
-              font-size: 1.4rem !important;
-        }
+        <style>
+          .swal-wide {
+            font-size: 1.4rem !important;
+          }
         </style>
         <script>
-        function confirmRemove(e) {
+          function confirmRemove(e) {
             Swal.fire({
               title: 'Are you sure?',
               text: "You won't be able to undo this!",
@@ -26,7 +26,7 @@
             })
 
             e.preventDefault();
-        }
+          }
         </script>
 
         <table class="table">
@@ -49,9 +49,9 @@
                   <div class="d-flex">
                     <a href="products/{{this.id}}"> <img style="width: 10rem" src={{this.image_url}} alt=""></a>
                   </div>
-{{!--                   <div class="media-body"> --}}
-{{!--                     <p style="margin-top: 10px;margin-bottom: 0px">{{this.name}}</p> --}}
-{{!--                   </div> --}}
+                  {{!-- <div class="media-body"> --}}
+                    {{!-- <p style="margin-top: 10px;margin-bottom: 0px">{{this.name}}</p> --}}
+                    {{!-- </div> --}}
                 </div>
               </td>
               <td style="vertical-align: middle">
@@ -82,13 +82,11 @@
             <tr class="bottom_button">
               <td>
                 <form id="delete-all-product" action="/cart" method="POST" enctype="multipart/form-data">
-                  <a onclick="confirmRemove(event)" class="button"
-                  style="margin-right:-28px" href="#"
-                  >REMOVE ALL</a>
+                  <a onclick="confirmRemove(event)" class="button" style="margin-right:-28px" href="#">REMOVE ALL</a>
                 </form>
               </td>
               <td>
-<td></td>
+              <td></td>
               </td>
               <td style="vertical-align: middle;">
                 <h5>Subtotal</h5>
@@ -123,7 +121,8 @@
                   <a class="gray_btn" href="/products">Continue shopping</a>
                   <a href="#" style="color: inherit;
                                        text-decoration: none;">
-                    <button  style="margin-top:10px;font-size:17px; padding:5px 10px 5px 10px"type="submit" class="primary-btn ml-2">Checkout</button>
+                    <button style="margin-top:10px;font-size:17px; padding:5px 10px 5px 10px" type="submit"
+                      class="primary-btn ml-2">Checkout</button>
                   </a>
                 </div>
               </td>

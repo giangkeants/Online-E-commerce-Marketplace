@@ -11,7 +11,7 @@ exports.get = async (id) => {
   try {
     const product = await model.findById(id);
     if (product === null) {
-      return {mess: `Product id '${id}' not found`};
+      return { mess: `Product id '${id}' not found` };
     }
     return product;
   } catch (err) {
@@ -24,16 +24,16 @@ exports.get = async (id) => {
  * @param page
  * @returns {Promise<void>}
  */
- exports.paging = async (page) => {
+exports.paging = async (page) => {
   try {
     let perPage = 12; // số lượng sản phẩm xuất hiện trên 1 page
     page = page || 1;
 
     return await model
-    .find() // find tất cả các data
-    .sort([["createdAt", "descending"]])
-    .skip((perPage * page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
-    .limit(perPage).lean();
+      .find() // find tất cả các data
+      .sort([["createdAt", "descending"]])
+      .skip((perPage * page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
+      .limit(perPage).lean();
   } catch (err) {
     throw err;
   }

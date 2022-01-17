@@ -4,7 +4,7 @@ const accountService = require("../../account/accountService");
 
 exports.insert = async (req, res) => {
   try {
-    if(!req.user) {
+    if (!req.user) {
       res.redirect('/login');
     } else {
       const cart = await cartService.getCartByUserId(req.user._id)
@@ -18,7 +18,7 @@ exports.insert = async (req, res) => {
           const customer = await accountService.getById(req.user._id);
           checkout = await service.insert(req.user._id, cart, customer);
         }
-        res.render('shopping/checkout/views/checkout', {checkout});
+        res.render('shopping/checkout/views/checkout', { checkout });
       }
     }
   } catch (err) {
@@ -52,7 +52,7 @@ exports.update = async (req, res) => {
 exports.delete = async (req, res) => {
   try {
     await service.delete(req.params.id);
-    res.json({message: `Order ${req.params.id} has been deleted`});
+    res.json({ message: `Order ${req.params.id} has been deleted` });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

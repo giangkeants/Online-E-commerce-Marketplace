@@ -45,7 +45,7 @@ exports.getProductById = async (req, res) => {
     results.comments = comments;
 
     // res.json(product);
-    res.render("product/views/detail", { product, results});
+    res.render("product/views/detail", { product, results });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -62,7 +62,7 @@ exports.paging = async (req, res) => {
     results.curr = page;
 
     results.first = (page - 1) * 12 + 1;
-    results.last = (page -1) * 12 + products.length;
+    results.last = (page - 1) * 12 + products.length;
     results.length = (await productService.getAll()).length;
 
     // Paginated

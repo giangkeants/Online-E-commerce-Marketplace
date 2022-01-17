@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   "use strict";
 
   //------- Parallax -------//
@@ -11,46 +11,46 @@ $(function() {
 
   //------- hero carousel -------//
   $(".hero-carousel").owlCarousel({
-    items:3,
+    items: 3,
     margin: 10,
-    autoplay:false,
+    autoplay: false,
     autoplayTimeout: 5000,
-    loop:true,
-    nav:false,
-    dots:false,
-    responsive:{
-      0:{
-        items:1
+    loop: true,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1
       },
-      600:{
+      600: {
         items: 2
       },
-      810:{
-        items:3
+      810: {
+        items: 3
       }
     }
   });
 
   //------- Best Seller Carousel -------//
-  if($('.owl-carousel').length > 0){
+  if ($('.owl-carousel').length > 0) {
     $('#bestSellerCarousel').owlCarousel({
-      loop:true,
-      margin:30,
-      nav:true,
-      navText: ["<i class='ti-arrow-left'></i>","<i class='ti-arrow-right'></i>"],
+      loop: true,
+      margin: 30,
+      nav: true,
+      navText: ["<i class='ti-arrow-left'></i>", "<i class='ti-arrow-right'></i>"],
       dots: false,
-      responsive:{
-        0:{
-          items:1
+      responsive: {
+        0: {
+          items: 1
         },
-        600:{
+        600: {
           items: 2
         },
-        900:{
-          items:3
+        900: {
+          items: 3
         },
-        1130:{
-          items:4
+        1130: {
+          items: 4
         }
       }
     })
@@ -58,81 +58,81 @@ $(function() {
 
   //------- single product area carousel -------//
   $(".s_Product_carousel").owlCarousel({
-    items:1,
-    autoplay:false,
+    items: 1,
+    autoplay: false,
     autoplayTimeout: 5000,
-    loop:true,
-    nav:false,
-    dots:false
+    loop: true,
+    nav: false,
+    dots: false
   });
 
   //------- mailchimp --------//  
-	function mailChimp() {
-		$('#mc_embed_signup').find('form').ajaxChimp();
-	}
+  function mailChimp() {
+    $('#mc_embed_signup').find('form').ajaxChimp();
+  }
   mailChimp();
-  
+
   //------- fixed navbar --------//  
-  $(window).scroll(function(){
+  $(window).scroll(function () {
     var sticky = $('.header_area'),
-    scroll = $(window).scrollTop();
+      scroll = $(window).scrollTop();
 
     if (scroll >= 100) sticky.addClass('fixed');
     else sticky.removeClass('fixed');
   });
 
   //------- Price Range slider -------//
-  if(document.getElementById("price-range")){
-  
+  if (document.getElementById("price-range")) {
+
     var nonLinearSlider = document.getElementById('price-range');
-    
+
     noUiSlider.create(nonLinearSlider, {
-        connect: true,
-        behaviour: 'tap',
-        start: [ 500, 2000 ],
-        range: {
-            // Starting at 500, step the value by 500,
-            // until 4000 is reached. From there, step by 1000.
-            'min': [ 500 ],
-            '10%': [ 500, 100 ],
-            'max': [ 2000 ]
-        }
+      connect: true,
+      behaviour: 'tap',
+      start: [500, 2000],
+      range: {
+        // Starting at 500, step the value by 500,
+        // until 4000 is reached. From there, step by 1000.
+        'min': [500],
+        '10%': [500, 100],
+        'max': [2000]
+      }
     });
-  
-  
+
+
     var nodes = [
-        document.getElementById('lower-value'), // 0
-        document.getElementById('upper-value')  // 1
+      document.getElementById('lower-value'), // 0
+      document.getElementById('upper-value')  // 1
     ];
-  
+
     // Display the slider value and how far the handle moved
     // from the left edge of the slider.
-    nonLinearSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
-        nodes[handle].innerHTML = values[handle];
+    nonLinearSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+      nodes[handle].innerHTML = values[handle];
     });
-  
+
   }
-  
+
 });
 
 $("#contactForm button[type=submit-comment]").on("click", function (event) {
   event.preventDefault();
   $.post(
-      `/api/products/${$("#product_id").val()}/comments`,
-      {
-        content: $("#message").val(),
-      },
-      function (data) {
-        const commentTemplate = Handlebars.compile(
-            document.getElementById("comment-template").innerHTML
-        );
-        const commentHtml = commentTemplate(data);
-        $("#comment-list").prepend(commentHtml);
-        document.getElementById("message").value = "";
-        console.log(commentHtml);
-      }
+    `/api/products/${$("#product_id").val()}/comments`,
+    {
+      content: $("#message").val(),
+    },
+    function (data) {
+      const commentTemplate = Handlebars.compile(
+        document.getElementById("comment-template").innerHTML
+      );
+      const commentHtml = commentTemplate(data);
+      $("#comment-list").prepend(commentHtml);
+      document.getElementById("message").value = "";
+      console.log(commentHtml);
+    }
   ).fail(function (data) {
-    if(data.status === 401)
+    if (data.status === 401)
       window.location.href = `/login?page=/products/${$('#product_id').val()}`;
   });
 });

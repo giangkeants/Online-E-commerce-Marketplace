@@ -40,7 +40,7 @@ exports.insert = async (newDiscount) => {
 exports.update = async (id, updateDiscount) => {
   try {
     return await model.findByIdAndUpdate(id, updateDiscount,
-        { new: true });
+      { new: true });
   } catch (err) {
     throw err;
   }

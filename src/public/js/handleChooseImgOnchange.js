@@ -1,4 +1,3 @@
-
 function handleChooseImgOnchange() {
     const img = document.getElementById("image_url").files[0];
     const avatar_url = URL.createObjectURL(img);

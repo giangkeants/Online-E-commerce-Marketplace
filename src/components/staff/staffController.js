@@ -44,7 +44,7 @@ exports.update = async (req, res) => {
 exports.delete = async (req, res) => {
   try {
     await service.delete(req.params.id);
-    res.json({message: `Staff ${req.params.id} has been deleted`});
+    res.json({ message: `Staff ${req.params.id} has been deleted` });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

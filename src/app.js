@@ -4,7 +4,7 @@ require('./hbsHelper/helper');
 const express = require('express');
 
 const path = require('path');
-const passport = require("./config/passport");  
+const passport = require("./config/passport");
 const flash = require('connect-flash');
 
 
@@ -53,7 +53,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.locals.user = req.user;
     next()
 })
@@ -75,12 +75,12 @@ app.use('/cart', cartRouter);
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};

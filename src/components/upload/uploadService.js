@@ -12,7 +12,7 @@ exports.get = async (id) => {
     try {
         const product = await model.findById(id);
         if (product === null) {
-            return {mess: `Product id '${id}' not found`};
+            return { mess: `Product id '${id}' not found` };
         }
         return product;
     } catch (err) {
@@ -73,11 +73,11 @@ exports.insert = async (newProduct, image) => {
     const id = addedProduct._id;
     const folderName = `product_image/${newProduct.name}`;
     result = await cloudinary.uploader.upload(image.path, {
-                public_id: id,
-                folder: folderName,
-                use_filename: true,
-            });
-    
+        public_id: id,
+        folder: folderName,
+        use_filename: true,
+    });
+
     /*
      Lay url
      Neu khong co hinh duoc up len, url bo trong
@@ -111,7 +111,7 @@ exports.update = async (id, updateProduct) => {
         //updateProduct.offer = { content: offer };
 
         return await model.findByIdAndUpdate(id, updateProduct,
-            {new: true});
+            { new: true });
     } catch (err) {
         throw err;
     }

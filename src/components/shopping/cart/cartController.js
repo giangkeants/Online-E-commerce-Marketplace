@@ -10,15 +10,15 @@ const cartService = require("./cartService");
 exports.getCart = async function (req, res) {
   try {
     let cart;
-    if(!req.user){
+    if (!req.user) {
       cart = await cartService.getCartByGuestId(req.session.guest_id);
     } else {
       cart = await cartService.getCartByUserId(req.user._id);
-      if (req.session.guest_id !== req.user._id){
+      if (req.session.guest_id !== req.user._id) {
         const guestCart = await cartService.getCartByGuestId(req.session.guest_id);
-        if(cart === null) {
-          if(guestCart !== null) {
-            if(guestCart.user_id === null) {
+        if (cart === null) {
+          if (guestCart !== null) {
+            if (guestCart.user_id === null) {
               cart = await cartService.synchronizeCart(req.user._id, guestCart);
               req.session.guest_id = req.user._id;
             }
@@ -26,8 +26,8 @@ exports.getCart = async function (req, res) {
             req.session.guest_id = req.user._id;
           }
         } else {
-          if(guestCart !== null) {
-            if(guestCart.user_id === null) {
+          if (guestCart !== null) {
+            if (guestCart.user_id === null) {
               await cartService.removeCart(guestCart);
               req.session.guest_id = req.user._id;
             }
@@ -39,7 +39,7 @@ exports.getCart = async function (req, res) {
       }
     }
 
-    res.render('shopping/cart/views/cart', {cart});
+    res.render('shopping/cart/views/cart', { cart });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -54,7 +54,7 @@ exports.getCart = async function (req, res) {
 exports.deleteProduct = async function (req, res) {
   try {
     let cart;
-    if(!req.user){
+    if (!req.user) {
       cart = await cartService.getCartByGuestId(req.session.guest_id);
     } else {
       cart = await cartService.getCartByUserId(req.user._id);
@@ -75,12 +75,12 @@ exports.deleteProduct = async function (req, res) {
 exports.deleteAllProduct = async function (req, res) {
   try {
     let cart;
-    if(!req.user){
+    if (!req.user) {
       cart = await cartService.getCartByGuestId(req.session.guest_id);
     } else {
       cart = await cartService.getCartByUserId(req.user._id);
     }
-    if(cart === null){
+    if (cart === null) {
       res.redirect('/products')
     } else {
       await cartService.updateCart(cart)

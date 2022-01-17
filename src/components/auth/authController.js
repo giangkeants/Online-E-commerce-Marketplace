@@ -54,7 +54,7 @@ exports.register = async (req, res) => {
   try {
     const { password } = req.body;
     const { confirmPassword } = req.body;
-    if(password != confirmPassword){
+    if (password != confirmPassword) {
       res.render('auth/views/register', {
         message: 'Password does not match'
       });

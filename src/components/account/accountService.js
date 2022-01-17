@@ -26,7 +26,7 @@ module.exports.getById = async (id) => {
  */
 module.exports.getByUsername = async (username) => {
   try {
-    return await model.findOne({username});
+    return await model.findOne({ username });
   } catch (err) {
     throw err;
   }
@@ -47,9 +47,9 @@ exports.paging = async (page) => {
     page = page || 1;
 
     return await model
-    .find() // find tất cả các data
-    .skip((perPage * page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
-    .limit(perPage);
+      .find() // find tất cả các data
+      .skip((perPage * page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
+      .limit(perPage);
   } catch (err) {
     throw err;
   }
@@ -76,7 +76,7 @@ module.exports.insert = async ({ username, email, password }) => {
   try {
     const isExisted_username = await model.exists({ username });
     const isExisted_email = await model.exists({ email });
-    if (isExisted_username || isExisted_email ) {
+    if (isExisted_username || isExisted_email) {
       return null;
     } else {
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -103,12 +103,12 @@ exports.update = async (id, updateUser, file) => {
     let result;
     if (file) {
       result = await cloudinary.uploader.upload(
-          file.path,
-          {
-            public_id: id,
-            folder: 'user_avatar',
-            use_filename: true
-          });
+        file.path,
+        {
+          public_id: id,
+          folder: 'user_avatar',
+          use_filename: true
+        });
     }
 
     /*
@@ -119,7 +119,7 @@ exports.update = async (id, updateUser, file) => {
     // Update user's info
     updateUser.avatar_url = url;
     return await model.findByIdAndUpdate(id, updateUser,
-        { new: true });
+      { new: true });
   } catch (err) {
     throw err;
   }

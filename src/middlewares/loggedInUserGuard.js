@@ -1,4 +1,4 @@
-module.exports = function loggedInUserGuard (req, res, next) {
+module.exports = function loggedInUserGuard(req, res, next) {
   if (req.user) {
     next();
   } else {

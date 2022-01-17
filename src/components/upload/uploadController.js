@@ -15,7 +15,7 @@ exports.get = async (req, res) => {
     //const offers = await offerService.getAll();
     //const discounts = await discountService.getAll();
     // res.json(product);
-    res.render('upload/views/edit-product', {product});
+    res.render('upload/views/edit-product', { product });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -114,7 +114,7 @@ exports.update = async (req, res) => {
     // res.json(updatedProduct);
     // res.render('edit_products', { updatedProduct });
     // REDIRECT VO CHO PRODUCT MOI
-    res.redirect('/product/'+updatedProduct.id);
+    res.redirect('/product/' + updatedProduct.id);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

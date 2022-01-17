@@ -1,7 +1,7 @@
 const commentService = require("../../components/comment/commentService");
 const productService = require("../../components/product/productService");
 
-exports.getCommentById = async (req, res) =>{
+exports.getCommentById = async (req, res) => {
     try {
         const page = parseInt(req.query.page) || 1; // trang thu n
         const comments = await commentService.getComment(page, req.params.id);
@@ -41,16 +41,16 @@ exports.getCommentById = async (req, res) =>{
  */
 exports.postComment = async (req, res) => {
     try {
-        if(!req.user){
+        if (!req.user) {
             res.status(401).json({
                 message: 'Unauthorized'
             });
             return;
         }
-        const {_id: user_id} = req.user;
-        const {avatar_url: user_avatar_url} = req.user;
-        const {username: user_name} = req.user;
-        const {content} = req.body;
+        const { _id: user_id } = req.user;
+        const { avatar_url: user_avatar_url } = req.user;
+        const { username: user_name } = req.user;
+        const { content } = req.body;
         const newComment = await commentService.postComment(user_id, user_avatar_url, user_name, req.params.id, content);
         res.status(201).json(newComment);
     } catch (err) {

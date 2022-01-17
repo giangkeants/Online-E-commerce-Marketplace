@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const discountSchema = new Schema( {
+const discountSchema = new Schema({
   // Schema attributes are defined here
   rate: Number,
   date_start: { type: Date },

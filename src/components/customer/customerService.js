@@ -40,7 +40,7 @@ exports.insert = async (newCustomer) => {
 exports.update = async (id, updateCustomer) => {
   try {
     return await model.findByIdAndUpdate(id, updateCustomer,
-        { new: true });
+      { new: true });
   } catch (err) {
     throw err;
   }

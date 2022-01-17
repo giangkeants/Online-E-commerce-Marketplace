@@ -5,7 +5,7 @@ exports.get = async (id) => {
   try {
     const order = await model.findById(mongoose.Types.ObjectId.createFromHexString(id));
     if (order === null) {
-      return {mess: `Order id '${req.params.id}' not found`};
+      return { mess: `Order id '${req.params.id}' not found` };
     }
     return order;
   } catch (err) {
@@ -40,7 +40,7 @@ exports.insert = async (newOrder) => {
 exports.update = async (id, updateOrder) => {
   try {
     return await model.findByIdAndUpdate(id, updateOrder,
-        { new: true });
+      { new: true });
   } catch (err) {
     throw err;
   }

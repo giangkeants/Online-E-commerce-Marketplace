@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 /**
  * OrderDetailSchema đại diện cho collection OrderDetailSchema trong db
  */
-const OrderDetailSchema = new Schema( {
+const OrderDetailSchema = new Schema({
   // Schema attributes are defined here
   product_id: { type: mongoose.Types.ObjectId },
   quantity: Number,

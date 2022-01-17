@@ -10,7 +10,7 @@ document
                 const $comment = $("#comment-list");
                 // $comment.empty();
 
-                const {comments, prev, next, curr} = data;
+                const { comments, prev, next, curr } = data;
                 const prevItem = document.getElementById("prev-page-item");
                 prevItem.innerText = prev;
                 prevItem.value = prev;
@@ -25,10 +25,10 @@ document
                 $comment.empty();
                 comments.forEach((comment) => {
                     let avatarString;
-                    if(comment.user_avatar_url)
-                        avatarString=`<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
+                    if (comment.user_avatar_url)
+                        avatarString = `<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
                                             class="avatar" src="${comment.user_avatar_url}" alt="">`;
-                    else avatarString=`<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
+                    else avatarString = `<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
                                             class="avatar"
                                             src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png"
                                             alt="">`;

@@ -137,8 +137,8 @@ exports.removeCart = async function (cart) {
 exports.deleteProduct = async function (cart, product_id) {
   try {
     await cartModel.updateOne(
-        { _id: cart._id},
-        { $pull: { products : { id : ObjectId.createFromHexString(product_id) } }}
+      { _id: cart._id },
+      { $pull: { products: { id: ObjectId.createFromHexString(product_id) } } }
     );
   } catch (err) {
     throw err;
@@ -196,11 +196,11 @@ exports.addProductToCart = async function (product, cart, qty) {
 exports.getGuestCartSize = async function (guest_id) {
   try {
     const cart = await cartModel
-        .findOne({
-          guest_id: guest_id,
-        })
-        .lean();
-    if(cart === null)
+      .findOne({
+        guest_id: guest_id,
+      })
+      .lean();
+    if (cart === null)
       return 0;
     else
       return cart.products.length;
@@ -217,11 +217,11 @@ exports.getGuestCartSize = async function (guest_id) {
 exports.getUserCartSize = async function (user_id) {
   try {
     const cart = await cartModel
-        .findOne({
-          user_id: ObjectId.createFromHexString(user_id),
-        })
-        .lean();
-    if(cart === null)
+      .findOne({
+        user_id: ObjectId.createFromHexString(user_id),
+      })
+      .lean();
+    if (cart === null)
       return 0;
     else
       return cart.products.length;

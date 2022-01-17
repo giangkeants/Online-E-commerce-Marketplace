@@ -11,7 +11,7 @@ exports.get = async (req, res) => {
   try {
     // const account = await service.getById(req.params.id);
     // res.render('account/views/account_detail', {account});
-                   //account_detail
+    //account_detail
     res.render('account/views/profile');
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -96,7 +96,7 @@ exports.update = async (req, res) => {
 exports.delete = async (req, res) => {
   try {
     await service.delete(req.params.id);
-    res.json({message: `Account ${req.params.id} has been deleted`});
+    res.json({ message: `Account ${req.params.id} has been deleted` });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
