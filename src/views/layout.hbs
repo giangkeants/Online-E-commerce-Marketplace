@@ -565,67 +565,6 @@
 <body data-rsssl=1
     class="archive post-type-archive post-type-archive-product theme-mazano woocommerce-shop woocommerce woocommerce-page woocommerce-js kt_used_header_6 Mazano-1.3.3 wpb-js-composer js-comp-ver-6.7.0 vc_responsive currency-usd">
     <!--================ Start Header Menu Area =================-->
-    <!--<header class="header_area">
-    <div class="main_menu">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand logo_h" href="/"><img src="/img/logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Cửa hàng</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="/products">Sản phẩm</a></li>
-                  <li class="nav-item"><a class="nav-link" href="cart.html">Giỏ hàng</a></li>
-                  {{#if user}}
-                    <li class="nav-item"><a class="nav-link" href="checkout.html">Thanh toán</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/confirmation">Xác nhận đơn hàng</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tracking-order.html">Theo dõi đơn hàng</a></li>
-                  {{/if}}
-                </ul>
-							</li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
-            </ul>
-
-            <ul class="nav-shop">
-              <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
-{{!--               <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li> --}}
-            </ul>
-            {{#if user}}
-            <a class="button button-login-header" href="/account/{{user._id}}">Hello, {{user.username}}</a>
-            <a class="button button-login-header" href="/logout">Đăng xuất</a>
-            {{else}}
-            <a class="button button-login-header" href="/login">Đăng nhập</a>
-            {{/if}}
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>-->
-    <!--<section id="head">
-  <div class="header">
-     <div class="container-fluid">
-              <a href="/"><p>Welcome to our online book store!</p></a>
-              <ul>
-                <li><a href="#" data-toggle="model" data-target="#myModel"><i class="fas fa-user"></i></a></li>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-              </ul>
-            </div>
-            <div class="container2">
-              <input type="text" placeholder="Search...">
-              <div class="search"></div>
-            </div>
-  </div>
-  </section>-->
     <div id="yith-wcwl-popup-message" style="display: none;">
         <div id="yith-wcwl-message"></div>
     </div>
@@ -644,7 +583,6 @@
                             <div class="padding-0 col-lg-5 col-md-6 hidden-sm hidden-xs">
                                 <div class="header-main-menu clear-both">
                                     <a href="/"><img
-                                            style="padding-left:50px"
                                             src="https://cdn.discordapp.com/attachments/635399217963204615/923536813493194752/logo.png"
                                             class=_rw></a>
                                 </div>
@@ -655,25 +593,23 @@
                             </div>
                             <div class="padding-0 col-lg-5 col-md-3 col-sm-7 col-xs-9">
                                 <div class="header-control clear-both">
-
                                     <div class="mini-cart mazano-mini-cart">
-
                                         <a class="cart-link" href="/cart">
-                                                <span class="icon">
-                                                    <span id="top-ti-shopping-cart" class="count">{{cartSize}}</span>
-                                                </span>
-                                                <span class="text">Bag</span>
-                                                <span class="sub-total"><span class="woocs_special_price_code"><span
-                                                            class="woocommerce-Price-amount amount"><bdi>0.00<span
-                                                                    class="woocommerce-Price-currencySymbol">$</span></bdi>
-                                                        </span>
+                                            <span class="icon">
+                                                <span class="count">0</span>
+                                            </span>
+                                            <span class="text">Bag</span>
+                                            <span class="sub-total"><span class="woocs_special_price_code"><span
+                                                        class="woocommerce-Price-amount amount"><bdi>0.00<span
+                                                                class="woocommerce-Price-currencySymbol">$</span></bdi>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </span>
+                                        </a>
                                     </div>
                                     {{!-- <span class="icon-account flaticon-shape"></span> --}}
                                     {{#if user}}
-                                    <a href="/account/{{user._id}}"><span class="icon-account flaticon-shape"><i
+                                    <a href="/account/{{user.id}}"><span class="icon-account flaticon-shape"><i
                                                 style="font-size: 1.5rem">Hello, {{user.username}}</i></span></a>
                                     {{else}}
                                     <a href="/login"><span class="icon-account flaticon-shape"><small
@@ -765,57 +701,6 @@
                                     </div>
                                     <span class="icon-account flaticon-shape"></span>
                                     <span class="icon-search flaticon-magnifying-glass"></span>
-                                    {{!-- <div class="account-control full-height"> --}}
-                                        {{!-- <div class="inner"> --}}
-                                            {{!-- <span class="close-account-control"></span> --}}
-                                            {{!-- <ul id="menu-acount-menu-1" class="account-menu"> --}}
-                                                {{!-- <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-315 menu-item-has-children">
-                                                    <a title="My Account"
-                                                        href="https://mazano.kutethemes.net/my-account/">My Account</a>
-                                                    --}}
-                                                    {{!-- <ul role="menu" class=" sub-menu"> --}}
-                                                        {{!-- <li
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-316">
-                                                            <a
-                                                                href="https://mazano.kutethemes.net/my-account/">Login</a>
-                                                        </li> --}}
-                                                        {{!-- <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-317">
-                                                            <a title="Wishlist"
-                                                                href="https://mazano.kutethemes.net/wishlist/">Wishlist</a>
-                                                        </li> --}}
-                                                        {{!-- <li
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318">
-                                                            <a title="Checkout"
-                                                                href="https://mazano.kutethemes.net/checkout/">Checkout</a>
-                                                        </li> --}}
-                                                        {{!-- </ul> --}}
-                                                    {{!--
-                                                </li> --}}
-                                                {{!-- <li
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-319 menu-item-has-children menu-item-currency-switcher">
-                                                    --}}
-                                                    {{!-- <a href="#"></a> --}}
-                                                    {{!-- </li> --}}
-                                                {{!-- </ul> --}}
-                                            {{!-- </div> --}}
-                                        {{!-- </div> --}}
-                                    {{!-- <div class="search-control full-height"> --}}
-                                        {{!-- <div class="inner"> --}}
-                                            {{!-- <span class="close-search-control"></span> --}}
-                                            {{!-- <form method="get" action="home.html" class="box-search kt_wcajs">
-                                                --}}
-                                                {{!-- <h3 class="title">Search Now !</h3> --}}
-                                                {{!-- <input type="hidden" name="post_type" value="product"> --}}
-                                                {{!-- <div class="box-search-inner"> --}}
-                                                    {{!-- <input class="search-field kt_wcajs_input" value=""
-                                                        type="text" name="s" placeholder="Your search here..."></div>
-                                                --}}
-                                                {{!-- <div class="kt_wcajs_result"></div> --}}
-                                                {{!-- </form> --}}
-                                            {{!-- </div> --}}
-                                        {{!-- </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -835,119 +720,6 @@
     <a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;"><i class="fa fa-angle-up"></i></a>
     <!-- Thanh cuộn Trở về đầu trang. -->
 
-    <!--<footer class="footer">
-		<div class="footer-area">
-			<div class="container">
-				<div class="row section_gap">
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title large_title">Our Mission</h4>
-							<p>
-								So seed seed green that winged cattle in. Gathering thing made fly you're no
-								divided deep moved us lan Gathering thing us land years living.
-							</p>
-							<p>
-								So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved
-							</p>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Quick Links</h4>
-							<ul class="list">
-								<li><a href="/">Home</a></li>
-								<li><a href="/products">Shop</a></li>
-								<li><a href="/login">Login</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget instafeed">
-							<h4 class="footer_title">Gallery</h4>
-							<ul class="list instafeed d-flex flex-wrap">
-								<li><img src="/img/gallery/r1.jpg" alt=""></li>
-								<li><img src="/img/gallery/r2.jpg" alt=""></li>
-								<li><img src="/img/gallery/r3.jpg" alt=""></li>
-								<li><img src="/img/gallery/r5.jpg" alt=""></li>
-								<li><img src="/img/gallery/r7.jpg" alt=""></li>
-								<li><img src="/img/gallery/r8.jpg" alt=""></li>
-							</ul>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Contact Us</h4>
-							<div class="ml-40">
-								<p class="sm-head">
-									<span class="fa fa-location-arrow"></span>
-									Head Office
-								</p>
-								<p>123, Main Street, Your City</p>
-
-								<p class="sm-head">
-									<span class="fa fa-phone"></span>
-									Phone Number
-								</p>
-								<p>
-									+123 456 7890 <br>
-									+123 456 7890
-								</p>
-
-								<p class="sm-head">
-									<span class="fa fa-envelope"></span>
-									Email
-								</p>
-								<p>
-									free@infoexample.com <br>
-									www.infoexample.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row d-flex">
-					<p class="col-lg-12 footer-text text-center">
-						Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </p>
-				</div>
-			</div>
-		</div>
-	</footer>-->
-    <!--<section id="footer">
-        <div class="container" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-          <div class="logo">
-            <img src="./images/263514110_212970104327196_4588598670760073787_n.png" alt="" width="200px" height="80px">
-            <p>© NG4VH BOOKS</p>
-          </div>
-          <div class="menu" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"
-            data-aos-duration="500">
-            <ul>
-              <li><a href="#">MY ORDERS</a></li>
-              <li><a href="#">COMPARE ITEMS</a></li>
-              <li><a href="#">SHOPPING BAG</a></li>
-              <li><a href="#">INFO</a></li>
-            </ul>
-          </div>
-          <div class="icon">
-            <ul class="social_icon" data-aos="zoom-out-left">
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        </div>
-        <div class="last">
-          <p>© DESIGN BY GROUP 4 - 2021</p>
-      </section>-->
     <footer class="footer style1">
         <div class="container">
             <div class="vc_row wpb_row vc_row-fluid vc_custom_1470186420787">
@@ -1274,16 +1046,17 @@ Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </
 
 
     <!--================ End footer Area  =================-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 
-      <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
-      <script src="/vendors/bootstrap/bootstrap.bundle.min.js"></script>
-      <script src="/vendors/skrollr.min.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="/vendors/jquery.ajaxchimp.min.js"></script>
-      <script src="/vendors/mail-script.js"></script>
-      <script src="/js/main.js"></script>
+    <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/vendors/skrollr.min.js"></script>
+
+    <script src="/vendors/jquery.ajaxchimp.min.js"></script>
+    <script src="/vendors/mail-script.js"></script>
+    <script src="/js/main.js"></script>
 </body>
-
 </html>
