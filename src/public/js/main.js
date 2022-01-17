@@ -127,7 +127,7 @@ $("#contactForm button[type=submit-comment]").on("click", function (event) {
             document.getElementById("comment-template").innerHTML
         );
         const commentHtml = commentTemplate(data);
-        $("#comment-list").prepend(commentHtml);
+        $("#review_box").prepend(commentHtml);
         document.getElementById("message").value = "";
         console.log(commentHtml);
       }
