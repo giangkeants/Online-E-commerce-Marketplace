@@ -70,6 +70,7 @@ exports.insert = async (req, res) => {
   }
 }
 
+
 /**
  * Tim va Update account da co trong database tra ket qua neu thanh cong
  *
@@ -77,15 +78,15 @@ exports.insert = async (req, res) => {
  * @param res response
  * @returns {Promise<void>}
  */
-exports.update = async (req, res) => {
+ exports.update = async (req, res) => {
   try {
     const updatedAccount = await service.update(req.params.id, req.body, req.file);
+    req.session.passport.user = updatedAccount;
     res.redirect(`/account/${updatedAccount._id}`);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
 }
-
 /**
  * Tim va xoa tai khoan trong database
  *
