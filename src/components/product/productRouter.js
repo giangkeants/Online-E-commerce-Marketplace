@@ -6,6 +6,6 @@ const controller = require('./productController');
 // Paging
 router.get('/', controller.paging);
 // Get 1 product
-router.get('/:id', controller.get);
+router.get('/:id', controller.getProductById);
 
 module.exports = router;
