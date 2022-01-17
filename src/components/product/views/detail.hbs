@@ -53,13 +53,13 @@
           			<iframe name="temp" style="display:none;"></iframe>
 					<div class="product_count">
 						<form id="add-to-cart" action="/api/cart/{{product._id}}" method="POST" target="temp">
-							<label for="qty">Quantity:</label>
+							<label for="qty">Qty: </label>
 
 
 
 							<input type="hidden" value="{{product._id}}" id="product_id" name="productId">
 							<input type="number" name="qty" id="qty" value="1" title="Quantity:" class="input-text qty"
-								style="width: 178px">
+								style="width: 220px">
 
 							<a href="#" class="button primary-btn" onclick="document.getElementById('add-to-cart').submit() ; notificationOnAdd(event)"
 							 	style="margin-top: 20px;">
@@ -127,7 +127,7 @@
 			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 				<div class="row">
 					<div class="col-lg-6">
-						<div class="comment_list">
+						<div id="comment-list" class="comment_list">
 							{{#each results.comments}}
 							<div class="review_item">
 								<div class="media">
@@ -135,30 +135,32 @@
 									<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
 										class="avatar" src="{{this.user_avatar_url}}" alt="">
 									{{else}}
-									<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
+									<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
 										class="avatar"
 										src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png"
 										alt="">
 									{{/if}}
 									<div class="media-body">
-										<h4>{{this.user_name}}</h4>
-										<h5>{{this.createdAt}}</h5>
+										<h4 style="margin-bottom:5px; padding-top:15px; margin-left:10px">{{this.user_name}} <i style="font-size:12px; font-weight:lighter">({{this.createdAt}})</i></h4>
+										<p style="margin-left: 10px">{{this.content}}</p>
 									</div>
 								</div>
-								<p>{{this.content}}</p>
+
 							</div>
 							{{/each}}
 							{{#if results.comments}}
 							<nav aria-label="Page navigation example">
-								<ul class="pagination justify-content-center">
+								<ul class="pagination justify-content-center" id="comment-pagination">
 									<li class="page-item" value="{{results.prev}}"><a id="prev-page-item"
-											class="page-link">{{results.prev}}</a></li>
+                                                                                      class="page-link"
+                                    >{{results.prev}}</a></li>
+                                    <li class="page-item" value="{{results.curr}}"><a id="curr-page-item"
+                                                                                      class="page-link"
 
-									<li class="page-item" value="{{results.curr}}"><a id="curr-page-item"
-											class="page-link">{{results.curr}}</a></li>
-
-									<li class="page-item" value="{{results.next}}"><a id="next-page-item"
-											class="page-link">{{results.next}}</a></li>
+                                    >{{results.curr}}</a></li>
+                                    <li class="page-item" value="{{results.next}}"><a id="next-page-item"
+                                                                                      class="page-link"
+                                    >{{results.next}}</a></li>
 								</ul>
 							</nav>
 							{{/if}}
@@ -384,23 +386,23 @@
 <!--================End Product Description Area =================-->
 <script id="comment-template" type="text/x-handlebars">
 	<div class="review_item">
-		<div class="media">
-			{{#if user.avatar_url}}
-			<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
-				class="avatar" src="{{user.avatar_url}}" alt="">
-			{{else}}
-			<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
-				class="avatar"
-				src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png"
-				alt="">
-			{{/if}}
-			<div class="media-body">
-				<h4>{{user.username}}</h4>
-				<h5>{{createdAt}}</h5>
-			</div>
-		</div>
-		<p>{{content}}</p>
-	</div>
+    	<div class="media">
+    		{{#if user.avatar_url}}
+    		<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%"
+    			class="avatar" src="{{user.avatar_url}}" alt="">
+    		{{else}}
+    		<img style="object-fit: cover; width: 75px; height: 75px; border-radius: 50%; float: left"
+    			class="avatar"
+    			src="https://cdn.discordapp.com/attachments/635399217963204615/931385624555049070/unknown.png"
+    			alt="">
+    		{{/if}}
+    		<div class="media-body">
+    			<h4 style="margin-bottom:5px; padding-top:15px; margin-left:10px">{{user.username}} <i style="font-size:12px; font-weight:lighter">(\{{createdAt}})</i></h4>
+    			<p style="margin-left: 10px">\{{content}}</p>
+    		</div>
+    	</div>
+    </div>
 </script>
 
 <script src="/js/ajaxHandler.js"></script>
+<script src="/js/commentAjaxHandler.js"></script>

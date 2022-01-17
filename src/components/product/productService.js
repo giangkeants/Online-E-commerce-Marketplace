@@ -31,6 +31,7 @@ exports.get = async (id) => {
 
     return await model
     .find() // find tất cả các data
+    .sort([["createdAt", "descending"]])
     .skip((perPage * page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
     .limit(perPage).lean();
   } catch (err) {
@@ -46,7 +47,7 @@ exports.get = async (id) => {
  */
 exports.getAll = async () => {
   try {
-    return await model.find();
+    return await model.find().sort([["createdAt", "descending"]]);
   } catch (err) {
     throw err;
   }
